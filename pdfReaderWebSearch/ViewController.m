@@ -48,29 +48,10 @@
 	// Do any additional setup after loading the view, typically from a nib.
     searchTextField.text = highlighted;
     
-    UIMenuItem *customMenuItem1 = [[UIMenuItem alloc] initWithTitle:@"Highlight" action:@selector(doHighlight:)];
-    UIMenuItem *customMenuItem2 = [[UIMenuItem alloc] initWithTitle:@"Note" action:@selector(doNote:)];
-    //[myArray addObject:customMenuItem2];
-    [[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObjects:customMenuItem1,customMenuItem2, nil]];
-    
 }
 
 #pragma mark - UIMenuController required methods
-- (BOOL)canBecomeFirstResponder {
-    // NOTE: This menu item will not show if this is not YES!
-    return YES;
-}
 
-- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
-    // The selector(s) should match your UIMenuItem selector
-    if (action == @selector(doHighlight:)) {
-        return YES;
-    }
-    if (action == @selector(doNote:)) {
-        return YES;
-    }
-    return NO;
-}
 
 
 - (void)didReceiveMemoryWarning

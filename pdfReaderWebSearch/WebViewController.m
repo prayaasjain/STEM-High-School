@@ -11,7 +11,7 @@
 #import "ShowPDFViewController.h"
 @implementation WebViewController
 
-@synthesize webView, addressBar, activityIndicator,selectedSearchEngine,desiredSearch,show,vc,wvc;
+@synthesize webView, addressBar, activityIndicator,selectedSearchEngine,desiredSearch,show,vc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -47,7 +47,7 @@
     
     if([choice isEqualToString:@"Google"])
     {
-        urlAddress = [[NSString alloc] initWithFormat:@"http://gog.is/%@",finalSearchQuery];
+        urlAddress = [[NSString alloc] initWithFormat:@"http://www.google.com/search?q=%@",finalSearchQuery];
         url = [NSURL URLWithString:urlAddress];
         requestObj = [NSURLRequest requestWithURL:url];
     }
