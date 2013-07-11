@@ -23,7 +23,7 @@
 - (IBAction)gotoAddress:(id)sender;
 - (IBAction)goBack:(id)sender;
 - (IBAction)goForward:(id)sender;
-- (IBAction)backToPdf:(id)sender;
+- (IBAction)backToPDF:(id)sender;
 - (IBAction)backToSearch:(id)sender;
 -(void) handleSelection:(NSString*)choice;
 

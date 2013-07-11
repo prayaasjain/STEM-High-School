@@ -11,7 +11,7 @@
 #import "ShowPDFViewController.h"
 @implementation WebViewController
 
-@synthesize webView, addressBar, activityIndicator,selectedSearchEngine,desiredSearch,show,vc;
+@synthesize webView, addressBar, activityIndicator,selectedSearchEngine,desiredSearch,show,vc,wvc;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -76,7 +76,10 @@
                   
 - (IBAction)gotoAddress:(id)sender {
 
-    NSURL *url = [NSURL URLWithString:[addressBar text]];
+
+    NSMutableString *addressquery = [[NSMutableString alloc] initWithString:@"http://"];
+    [addressquery appendString:[addressBar text]];
+    NSURL *url = [NSURL URLWithString:addressquery];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     
     [webView loadRequest:requestObj];
@@ -94,12 +97,14 @@
     [webView goForward];
 }
 
-- (IBAction)backToPdf:(id)sender {
-    [show dismissViewControllerAnimated:YES completion:nil];
-}
-
 - (IBAction)backToSearch:(id)sender {
     [vc dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (IBAction)backToPDF:(id)sender {
+    
+    [show dismissViewControllerAnimated:YES completion:nil];
+    
 }
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {

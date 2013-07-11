@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="gnC-Es-Knf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="gnC-Es-Knf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -37,6 +37,7 @@
                     </navigationItem>
                     <connections>
                         <segue destination="rfn-mm-2JZ" kind="push" identifier="showPDF" id="Abz-dX-3cC"/>
+                        <segue destination="rfn-mm-2JZ" kind="push" identifier="loadFromSite" id="fzR-qB-7T4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M5r-W7-8Ml" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -138,6 +139,11 @@
                         <barButtonItem key="leftBarButtonItem" title="Menu" id="vyF-hN-aGn">
                             <connections>
                                 <segue destination="LAh-H9-SV0" kind="modal" identifier="showMenu" modalPresentationStyle="formSheet" id="qPh-q1-k3N"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="I45-8n-YSY">
+                            <connections>
+                                <segue destination="2" kind="modal" modalPresentationStyle="formSheet" id="3F1-cP-OCK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -279,7 +285,7 @@
                                 <items>
                                     <barButtonItem title="Back to PDF" id="Bbs-p9-GoE">
                                         <connections>
-                                            <action selector="backToPdf:" destination="GR5-o7-0g7" id="pZP-PU-dac"/>
+                                            <action selector="backToPDF:" destination="GR5-o7-0g7" id="f9T-F0-gtm"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem title="Back to Search" id="OC2-ah-evy">
@@ -407,6 +413,7 @@
         <class className="WebViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
             <relationships>
+                <relationship kind="action" name="backToPDF:"/>
                 <relationship kind="action" name="backToPdf:"/>
                 <relationship kind="action" name="backToSearch:"/>
                 <relationship kind="action" name="goBack:"/>
@@ -423,4 +430,8 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="fzR-qB-7T4"/>
+        <segue reference="3F1-cP-OCK"/>
+    </inferredMetricsTieBreakers>
 </document>
