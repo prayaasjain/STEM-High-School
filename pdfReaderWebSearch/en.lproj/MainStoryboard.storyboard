@@ -333,11 +333,11 @@
                             <constraint firstItem="Xyn-hn-s8H" firstAttribute="top" secondItem="5Qa-4u-uL6" secondAttribute="top" type="default" id="Oic-QA-2Jq"/>
                             <constraint firstItem="jgo-Z8-mzg" firstAttribute="trailing" secondItem="5Qa-4u-uL6" secondAttribute="trailing" type="default" id="TFL-oL-yey"/>
                             <constraint firstItem="Nv1-X8-wkz" firstAttribute="centerY" secondItem="Xyn-hn-s8H" secondAttribute="centerY" type="default" id="WsI-cp-SWN"/>
-                            <constraint firstItem="f11-RW-HjM" firstAttribute="bottom" secondItem="5Qa-4u-uL6" secondAttribute="bottom" type="default" id="aFh-M0-H2c"/>
                             <constraint firstItem="jgo-Z8-mzg" firstAttribute="leading" secondItem="5Qa-4u-uL6" secondAttribute="leading" type="default" id="dyx-IR-mjj"/>
                             <constraint firstItem="f11-RW-HjM" firstAttribute="trailing" secondItem="5Qa-4u-uL6" secondAttribute="trailing" type="default" id="rWQ-AO-09R"/>
                             <constraint firstAttribute="trailing" secondItem="Nv1-X8-wkz" secondAttribute="trailing" constant="13" id="wom-6C-9dX"/>
                             <constraint firstItem="f11-RW-HjM" firstAttribute="top" secondItem="jgo-Z8-mzg" secondAttribute="bottom" type="default" id="xLd-tk-zB5"/>
+                            <constraint firstItem="jgo-Z8-mzg" firstAttribute="centerY" secondItem="5Qa-4u-uL6" secondAttribute="centerY" type="default" id="xdU-sa-Bga"/>
                             <constraint firstItem="Xyn-hn-s8H" firstAttribute="trailing" secondItem="5Qa-4u-uL6" secondAttribute="trailing" type="default" id="yaQ-ez-2FX"/>
                         </constraints>
                     </view>
@@ -414,8 +414,8 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
             <relationships>
                 <relationship kind="action" name="backToPDF:"/>
-                <relationship kind="action" name="backToPdf:"/>
                 <relationship kind="action" name="backToSearch:"/>
+                <relationship kind="action" name="dismissKeyboard:"/>
                 <relationship kind="action" name="goBack:"/>
                 <relationship kind="action" name="goForward:"/>
                 <relationship kind="action" name="gotoAddress:"/>

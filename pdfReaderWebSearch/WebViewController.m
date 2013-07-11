@@ -68,6 +68,8 @@
     
 }
 
+
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
@@ -76,12 +78,19 @@
                   
 - (IBAction)gotoAddress:(id)sender {
 
-
+    NSURLRequest *requestObj = [NSURLRequest alloc];
+    NSURL *requestUrl = [[NSURL alloc] initWithString:[addressBar text]];
+    
+    if([[requestUrl scheme] isEqualToString:@"http"]) {
+        requestObj = [NSURLRequest requestWithURL:requestUrl];
+    }
+    else {
     NSMutableString *addressquery = [[NSMutableString alloc] initWithString:@"http://"];
     [addressquery appendString:[addressBar text]];
     NSURL *url = [NSURL URLWithString:addressquery];
-    NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    
+    requestObj = [NSURLRequest requestWithURL:url];
+    }
+
     [webView loadRequest:requestObj];
     [addressBar resignFirstResponder];
 
@@ -106,6 +115,7 @@
     [show dismissViewControllerAnimated:YES completion:nil];
     
 }
+
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     [activityIndicator startAnimating];
