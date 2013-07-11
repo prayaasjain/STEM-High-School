@@ -110,12 +110,15 @@
     [vc dismissViewControllerAnimated:YES completion:nil];
 }
 
+- (IBAction)dismissKeyboard:(id)sender {
+    [addressBar resignFirstResponder];
+}
+
 - (IBAction)backToPDF:(id)sender {
     
     [show dismissViewControllerAnimated:YES completion:nil];
     
 }
-
 
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     [activityIndicator startAnimating];

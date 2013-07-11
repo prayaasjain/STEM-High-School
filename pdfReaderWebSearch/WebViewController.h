@@ -25,6 +25,7 @@
 - (IBAction)goForward:(id)sender;
 - (IBAction)backToPDF:(id)sender;
 - (IBAction)backToSearch:(id)sender;
+- (IBAction)dismissKeyboard:(id)sender;
 -(void) handleSelection:(NSString*)choice;
 
 @end
