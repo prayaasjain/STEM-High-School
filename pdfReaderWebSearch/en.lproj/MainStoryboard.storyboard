@@ -351,21 +351,26 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="pMI-Ek-y8j">
+                                <color key="color" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="pMI-Ek-y8j" firstAttribute="centerX" secondItem="vUo-pG-slV" secondAttribute="centerX" type="default" id="06t-YN-G8e"/>
                             <constraint firstItem="f11-RW-HjM" firstAttribute="leading" secondItem="5Qa-4u-uL6" secondAttribute="leading" type="default" id="0fA-3B-3zc"/>
-                            <constraint firstItem="vUo-pG-slV" firstAttribute="centerY" secondItem="5Qa-4u-uL6" secondAttribute="centerY" type="default" id="7QB-xp-gFI"/>
+                            <constraint firstItem="pMI-Ek-y8j" firstAttribute="centerY" secondItem="jgo-Z8-mzg" secondAttribute="centerY" type="default" id="2cK-9A-fGx"/>
+                            <constraint firstItem="pMI-Ek-y8j" firstAttribute="centerX" secondItem="Xyn-hn-s8H" secondAttribute="centerX" type="default" id="4BO-Vo-aCe"/>
+                            <constraint firstItem="pMI-Ek-y8j" firstAttribute="centerY" secondItem="5Qa-4u-uL6" secondAttribute="centerY" type="default" id="6TH-nZ-LmP"/>
                             <constraint firstItem="Xyn-hn-s8H" firstAttribute="leading" secondItem="5Qa-4u-uL6" secondAttribute="leading" type="default" id="BAa-Y0-6qY"/>
                             <constraint firstItem="jgo-Z8-mzg" firstAttribute="top" secondItem="Xyn-hn-s8H" secondAttribute="bottom" type="default" id="Cqq-dE-bEL"/>
-                            <constraint firstItem="vUo-pG-slV" firstAttribute="centerX" secondItem="Xyn-hn-s8H" secondAttribute="centerX" type="default" id="O5t-Hl-SJB"/>
                             <constraint firstItem="Xyn-hn-s8H" firstAttribute="top" secondItem="5Qa-4u-uL6" secondAttribute="top" type="default" id="Oic-QA-2Jq"/>
                             <constraint firstItem="jgo-Z8-mzg" firstAttribute="trailing" secondItem="5Qa-4u-uL6" secondAttribute="trailing" type="default" id="TFL-oL-yey"/>
                             <constraint firstItem="f11-RW-HjM" firstAttribute="top" secondItem="H2x-Ae-3uK" secondAttribute="bottom" type="default" id="WHZ-gh-juP"/>
                             <constraint firstItem="H2x-Ae-3uK" firstAttribute="top" secondItem="Xyn-hn-s8H" secondAttribute="bottom" type="default" id="a6n-ff-G6b"/>
-                            <constraint firstItem="vUo-pG-slV" firstAttribute="centerY" secondItem="jgo-Z8-mzg" secondAttribute="centerY" type="default" id="dLi-cu-7KU"/>
                             <constraint firstItem="jgo-Z8-mzg" firstAttribute="leading" secondItem="5Qa-4u-uL6" secondAttribute="leading" type="default" id="dyx-IR-mjj"/>
                             <constraint firstItem="H2x-Ae-3uK" firstAttribute="leading" secondItem="5Qa-4u-uL6" secondAttribute="leading" type="default" id="hJa-aq-dvm"/>
+                            <constraint firstItem="pMI-Ek-y8j" firstAttribute="centerY" secondItem="vUo-pG-slV" secondAttribute="centerY" type="default" id="lda-3b-mvU"/>
                             <constraint firstItem="f11-RW-HjM" firstAttribute="trailing" secondItem="5Qa-4u-uL6" secondAttribute="trailing" type="default" id="rWQ-AO-09R"/>
                             <constraint firstItem="f11-RW-HjM" firstAttribute="top" secondItem="jgo-Z8-mzg" secondAttribute="bottom" type="default" id="xLd-tk-zB5"/>
                             <constraint firstItem="Xyn-hn-s8H" firstAttribute="trailing" secondItem="5Qa-4u-uL6" secondAttribute="trailing" type="default" id="yaQ-ez-2FX"/>
@@ -374,6 +379,8 @@
                     <navigationItem key="navigationItem" id="Thm-lh-uYX"/>
                     <modalFormSheetSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="pMI-Ek-y8j" id="Eia-ac-yIg"/>
+                        <outlet property="addressBar" destination="vUo-pG-slV" id="l6g-Mc-zJX"/>
                         <outlet property="webView" destination="jgo-Z8-mzg" id="ptB-DI-tCn"/>
                     </connections>
                 </viewController>
