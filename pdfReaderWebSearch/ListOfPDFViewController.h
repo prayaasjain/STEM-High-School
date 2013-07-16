@@ -15,4 +15,7 @@
 - (IBAction)clearAll:(id)sender;
 @property bool loadFromSite;
 -(void) clearArray;
+-(void) handleEdit;
+
+-(UIImage*)thumbnailForPath:(NSString*)samplepath;
 @end
