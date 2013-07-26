@@ -22,7 +22,7 @@
 NSString *selection;
 NSTimer *timer;
 CGFloat offset;
-int currentpage;
+
 -(void)viewDidLoad
 {
     [super viewDidLoad];
@@ -43,26 +43,11 @@ int currentpage;
     
     [[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObjects:menuItem,highlightMenuItem, nil]];
     
-    timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(handleTimer) userInfo:@"Timer" repeats:YES];
-    currentpage = 1;
-    //610 page 2
-    //1677 page 3
-    //2747 page 4
-    //3814 page 5
-    //4883 page 6
-    //5951 page 7
-    // y=1068(x-1)+610
+   
     
 }
 
--(void)handleTimer{
-    offset = pdfViewer.scrollView.contentOffset.y;
-    if(offset > (1068*(currentpage -1)+610))
-        currentpage++;
-    else if(offset < (1068*(currentpage -2)+610))
-        currentpage--;
-    //NSLog(@"Current page: %i",currentpage);
-}
+
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if([segue.identifier isEqualToString:@"showSearch"])

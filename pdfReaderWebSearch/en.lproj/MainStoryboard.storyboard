@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="11G63" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="gnC-Es-Knf">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12D78" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="gnC-Es-Knf">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
@@ -45,90 +45,6 @@
             </objects>
             <point key="canvasLocation" x="4862" y="-408"/>
         </scene>
-        <!--Menu View Controller-->
-        <scene sceneID="S3A-EM-Q8g">
-            <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" id="LAh-H9-SV0" customClass="MenuViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="l8U-jf-Vca">
-                        <rect key="frame" x="0.0" y="0.0" width="500" height="500"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="hDA-lm-9mh">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="540" id="2bh-yo-z5O"/>
-                                </constraints>
-                                <items/>
-                            </toolbar>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Menu" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="22E-G2-A0m">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="51" id="8pW-RU-3U0"/>
-                                    <constraint firstAttribute="height" constant="21" id="kYx-Dm-8mh"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="DevanagariSangamMN" family="Devanagari Sangam MN" pointSize="20"/>
-                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3lh-Po-9pt">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="361" id="BUy-y4-fX7"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Back to List of PDFS">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="goBackToList:" destination="LAh-H9-SV0" eventType="touchUpInside" id="5cP-Gf-Vb7"/>
-                                </connections>
-                            </button>
-                            <navigationBar contentMode="scaleToFill" barStyle="blackOpaque" translatesAutoresizingMaskIntoConstraints="NO" id="Yhy-Zm-egi">
-                                <items>
-                                    <navigationItem title="Menu" id="WzZ-xs-bBW">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="XrA-0I-tXR">
-                                            <color key="tintColor" red="0.59999999999999998" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <connections>
-                                                <action selector="exitMenu:" destination="LAh-H9-SV0" id="Wwe-b9-yT0"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pdm-2N-Biu">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Thumbnail View">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="Yhy-Zm-egi" firstAttribute="centerX" secondItem="22E-G2-A0m" secondAttribute="centerX" type="default" id="22X-YN-rSt"/>
-                            <constraint firstItem="Yhy-Zm-egi" firstAttribute="trailing" secondItem="l8U-jf-Vca" secondAttribute="trailing" type="default" id="Itt-1V-7dt"/>
-                            <constraint firstItem="3lh-Po-9pt" firstAttribute="trailing" secondItem="Pdm-2N-Biu" secondAttribute="trailing" type="default" id="Ry2-6G-WCJ"/>
-                            <constraint firstItem="3lh-Po-9pt" firstAttribute="top" secondItem="l8U-jf-Vca" secondAttribute="top" constant="194" id="UIf-l5-bJJ"/>
-                            <constraint firstItem="Yhy-Zm-egi" firstAttribute="leading" secondItem="l8U-jf-Vca" secondAttribute="leading" type="default" id="UZ6-Su-oeU"/>
-                            <constraint firstItem="22E-G2-A0m" firstAttribute="centerX" secondItem="3lh-Po-9pt" secondAttribute="centerX" type="default" id="Wqc-oH-wIM"/>
-                            <constraint firstItem="Yhy-Zm-egi" firstAttribute="top" secondItem="l8U-jf-Vca" secondAttribute="top" constant="-3" id="Y51-2h-Sg8"/>
-                            <constraint firstItem="22E-G2-A0m" firstAttribute="top" secondItem="l8U-jf-Vca" secondAttribute="top" constant="8" id="hzu-4U-LYU"/>
-                            <constraint firstItem="Pdm-2N-Biu" firstAttribute="leading" secondItem="3lh-Po-9pt" secondAttribute="leading" type="default" id="lrm-8t-Uyp"/>
-                            <constraint firstItem="hDA-lm-9mh" firstAttribute="bottom" secondItem="l8U-jf-Vca" secondAttribute="bottom" type="default" id="m9e-RO-Eum"/>
-                            <constraint firstItem="hDA-lm-9mh" firstAttribute="leading" secondItem="l8U-jf-Vca" secondAttribute="leading" type="default" id="n8X-2u-egY"/>
-                            <constraint firstAttribute="bottom" secondItem="Pdm-2N-Biu" secondAttribute="bottom" constant="200" id="p7m-KY-qFS"/>
-                        </constraints>
-                    </view>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="e9u-Z7-QY9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5865" y="-1073"/>
-        </scene>
         <!--ShowPDF View Controller-->
         <scene sceneID="5uz-8k-OiZ">
             <objects>
@@ -157,11 +73,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vtd-el-02E">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="vyF-hN-aGn">
-                            <connections>
-                                <segue destination="LAh-H9-SV0" kind="modal" identifier="showMenu" modalPresentationStyle="formSheet" id="qPh-q1-k3N"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="I45-8n-YSY">
                             <connections>
                                 <segue destination="2" kind="modal" identifier="showSearch" modalPresentationStyle="formSheet" id="3F1-cP-OCK"/>
@@ -421,59 +332,6 @@
             <point key="canvasLocation" x="3860" y="-442"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="CustomView" superclassName="UIView">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/CustomView.h"/>
-        </class>
-        <class className="ListOfPDFViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ListOfPDFViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="clearAll:"/>
-            </relationships>
-        </class>
-        <class className="MenuViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/MenuViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="exitMenu:"/>
-                <relationship kind="action" name="goBackToList:"/>
-            </relationships>
-        </class>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ShowPDFViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ShowPDFViewController.h"/>
-            <relationships>
-                <relationship kind="outlet" name="backView" candidateClass="CustomView"/>
-                <relationship kind="outlet" name="pdfViewer" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="TableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/TableViewController.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backButton:"/>
-                <relationship kind="outlet" name="searchTextField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="selectSearchButton" candidateClass="UIButton"/>
-            </relationships>
-        </class>
-        <class className="WebViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/WebViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="backToPDF:"/>
-                <relationship kind="action" name="backToSearch:"/>
-                <relationship kind="action" name="dismissKeyboard:"/>
-                <relationship kind="action" name="goBack:"/>
-                <relationship kind="action" name="goForward:"/>
-                <relationship kind="action" name="gotoAddress:"/>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="addressBar" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

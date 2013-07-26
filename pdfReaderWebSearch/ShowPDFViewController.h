@@ -17,6 +17,5 @@
 
 -(void)loadPDF:(NSString *)path;
 -(void)loadURL:(NSURL *)url;
--(void)handleTimer;
--(void)goToPage:(int)page;
+
 @end

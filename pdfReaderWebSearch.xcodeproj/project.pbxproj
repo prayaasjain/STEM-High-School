@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0093F79A1784CEDD000B17EF /* ListOfPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0093F7991784CEDD000B17EF /* ListOfPDFViewController.m */; };
 		00963C7117739DA40059C226 /* sample.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 00963C7017739DA40059C226 /* sample.pdf */; };
-		00F5D293178C9C9C00267055 /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5D292178C9C9C00267055 /* MenuViewController.m */; };
 		00F5D297178CB5F100267055 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F5D296178CB5F100267055 /* icon.png */; };
 		00F5D29A178DDCC700267055 /* ShowPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5D299178DDCC700267055 /* ShowPDFViewController.m */; };
 		00F5D29D178E076A00267055 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5D29C178E076A00267055 /* CustomView.m */; };
@@ -33,8 +32,6 @@
 		0093F7981784CEDD000B17EF /* ListOfPDFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListOfPDFViewController.h; sourceTree = "<group>"; };
 		0093F7991784CEDD000B17EF /* ListOfPDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListOfPDFViewController.m; sourceTree = "<group>"; };
 		00963C7017739DA40059C226 /* sample.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = sample.pdf; sourceTree = "<group>"; };
-		00F5D291178C9C9C00267055 /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
-		00F5D292178C9C9C00267055 /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		00F5D296178CB5F100267055 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		00F5D298178DDCC700267055 /* ShowPDFViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShowPDFViewController.h; sourceTree = "<group>"; };
 		00F5D299178DDCC700267055 /* ShowPDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPDFViewController.m; sourceTree = "<group>"; };
@@ -116,8 +113,6 @@
 				00F5D29C178E076A00267055 /* CustomView.m */,
 				00F5D298178DDCC700267055 /* ShowPDFViewController.h */,
 				00F5D299178DDCC700267055 /* ShowPDFViewController.m */,
-				00F5D291178C9C9C00267055 /* MenuViewController.h */,
-				00F5D292178C9C9C00267055 /* MenuViewController.m */,
 				D8D1F7AB1770D2850011A103 /* MainStoryboard.storyboard */,
 				D8D1F7BB177223590011A103 /* TableViewController.h */,
 				D8D1F7BC1772235A0011A103 /* TableViewController.m */,
@@ -223,7 +218,6 @@
 				D8D1F7BD1772235B0011A103 /* TableViewController.m in Sources */,
 				D8D1F7C0177233DF0011A103 /* SearchType.m in Sources */,
 				0093F79A1784CEDD000B17EF /* ListOfPDFViewController.m in Sources */,
-				00F5D293178C9C9C00267055 /* MenuViewController.m in Sources */,
 				00F5D29A178DDCC700267055 /* ShowPDFViewController.m in Sources */,
 				00F5D29D178E076A00267055 /* CustomView.m in Sources */,
 			);
