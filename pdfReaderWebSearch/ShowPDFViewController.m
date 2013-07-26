@@ -52,9 +52,8 @@ int currentpage;
     //4883 page 6
     //5951 page 7
     // y=1068(x-1)+610
+    
 }
-
-
 
 -(void)handleTimer{
     offset = pdfViewer.scrollView.contentOffset.y;
@@ -131,8 +130,6 @@ int currentpage;
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [pdfViewer loadRequest:request];
     //NSLog(@"Should of loaded path: %@",path);
-    
-    
 }
 
 -(void)goToPage:(int)page {
@@ -147,4 +144,5 @@ int currentpage;
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [pdfViewer loadRequest:request];
 }
+
 @end

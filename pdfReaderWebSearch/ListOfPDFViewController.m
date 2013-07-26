@@ -16,15 +16,10 @@
 
 @implementation ListOfPDFViewController
 
-@synthesize listOfPDF,path,url,loadFromSite;
+@synthesize listOfPDF,path,url,loadFromSite, mstring, editItems, editbar, itemNav;
 
 bool editButtonToggle;
 
-//pathofmaindirectory
-NSMutableString *mstring;
-UINavigationBar *editbar;
-
-UINavigationItem *item;
 int numOfSelectedRows;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -61,6 +56,7 @@ int numOfSelectedRows;
     [super viewDidLoad];
     [self setRestorationIdentifier:@"list"];
     self.navigationController.navigationBar.topItem.prompt = @"USC";
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
     [self setTitle:@"List of available PDF Files"];
     loadFromSite = false;
     
@@ -69,16 +65,20 @@ int numOfSelectedRows;
     [self.tableView reloadData];
     editButtonToggle = false;
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    editbar = [[UINavigationBar alloc] initWithFrame:CGRectMake(70, 50, 500, 50)];
+    editbar = [[UIToolbar alloc] initWithFrame:CGRectMake(70, 0, 700, 95)];
+    editbar.barStyle = UIBarStyleBlack;
+
     UIBarButtonItem *editTitle = [[UIBarButtonItem alloc] initWithTitle:@"Title"
                                                                   style:UIBarButtonItemStyleBordered target:nil action:nil];
     UIBarButtonItem *editMove = [[UIBarButtonItem alloc] initWithTitle:@"Move"
                                                                  style:UIBarButtonItemStyleBordered target:nil action:nil];
+    editItems = [[NSArray alloc] initWithObjects:editTitle, editMove, nil];
+    [editbar setItems:editItems];
     
-    item = [[UINavigationItem alloc] initWithTitle:@"Edit Toolbar"];
-    //item.rightBarButtonItem = rightButton;
-    item.hidesBackButton = YES;
-    item.leftBarButtonItems = [NSArray arrayWithObjects:editTitle, editMove, nil];
+    //itemNav = [[UINavigationItem alloc] initWithTitle:@"Edit Toolbar"];
+    //itemNav.rightBarButtonItem = rightButton;
+    //itemNav.hidesBackButton = YES;
+    //itemNav.leftBarButtonItems = [NSArray arrayWithObjects:editTitle, editMove, nil];
     
     
     NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(handleEdit) userInfo:@"edit" repeats:YES];
@@ -125,11 +125,11 @@ int numOfSelectedRows;
         editButtonToggle = true;
         
         [self.navigationController.view addSubview:editbar];
-        [editbar pushNavigationItem:item animated:YES];
+        //[editbar pushNavigationItem:item animated:YES];
     }
     else if(!self.editing){
         editButtonToggle = false;
-        [editbar popNavigationItemAnimated:YES];
+        //[editbar popNavigationItemAnimated:YES];
         [editbar removeFromSuperview];
     }
 }
@@ -165,8 +165,7 @@ int numOfSelectedRows;
     cell.textLabel.text = [[[listOfPDF objectAtIndex:indexPath.row] componentsSeparatedByString:mstring] componentsJoinedByString:@""];
     
     cell.imageView.image = [self thumbnailForPath:[listOfPDF objectAtIndex:indexPath.row]];
-    
-    
+    cell.indentationWidth = 20;
     
     return cell;
 }
@@ -402,4 +401,8 @@ int numOfSelectedRows;
         return thumbnailImage;
     }
 }
+
+
+
+
 @end
