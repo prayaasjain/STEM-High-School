@@ -18,7 +18,6 @@
 -(void) handleEdit;
 
 @property NSMutableString *mstring;
-//@property UINavigationBar *editbar;
 @property UIToolbar *editbar;
 @property NSArray *editItems;
 @property UINavigationItem *itemNav;

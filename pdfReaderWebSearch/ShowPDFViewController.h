@@ -18,4 +18,8 @@
 -(void)loadPDF:(NSString *)path;
 -(void)loadURL:(NSURL *)url;
 
+@property NSString *selection;
+@property NSTimer  *timer;
+@property CGFloat *offset;
+
 @end

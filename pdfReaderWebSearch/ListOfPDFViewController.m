@@ -30,18 +30,17 @@ int numOfSelectedRows;
     }
     return self;
 }
-/*
- -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- if([segue.identifier isEqual: @"showPDF"])
- {
- TestViewController *tvc = [segue destinationViewController];
- //NSLog(@"%@",path);
- [tvc loadPDF:path];
- 
- 
- }
- }
- */
+
+// -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+// if([segue.identifier isEqual: @"showPDF"])
+// {
+// TestViewController *tvc = [segue destinationViewController];
+// //NSLog(@"%@",path);
+// [tvc loadPDF:path];
+// 
+// 
+// }
+// }
 
 -(void)viewDidAppear:(BOOL)animated{
     self.navigationItem.hidesBackButton = true;
@@ -60,28 +59,33 @@ int numOfSelectedRows;
     [self setTitle:@"List of available PDF Files"];
     loadFromSite = false;
     
-    
     [self loadArray];
     [self.tableView reloadData];
-    editButtonToggle = false;
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
-    editbar = [[UIToolbar alloc] initWithFrame:CGRectMake(70, 0, 700, 95)];
-    editbar.barStyle = UIBarStyleBlack;
+    
 
-    UIBarButtonItem *editTitle = [[UIBarButtonItem alloc] initWithTitle:@"Title"
-                                                                  style:UIBarButtonItemStyleBordered target:nil action:nil];
-    UIBarButtonItem *editMove = [[UIBarButtonItem alloc] initWithTitle:@"Move"
-                                                                 style:UIBarButtonItemStyleBordered target:nil action:nil];
-    editItems = [[NSArray alloc] initWithObjects:editTitle, editMove, nil];
-    [editbar setItems:editItems];
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
+    self.tableView.allowsMultipleSelectionDuringEditing = YES;
+
+    editButtonToggle = false;
+    editbar = [UIToolbar alloc];
+    editbar.barStyle = UIBarStyleBlack;
+//
+//    UIBarButtonItem *editTitle = [[UIBarButtonItem alloc] initWithTitle:@"Title"
+//    style:UIBarButtonItemStyleBordered target:nil action:nil];
+//    UIBarButtonItem *editMove = [[UIBarButtonItem alloc] initWithTitle:@"Move"
+//    style:UIBarButtonItemStyleBordered target:nil action:nil];
+//    
+//    editItems = [[NSArray alloc] initWithObjects:editTitle, editMove, nil];
+//    [editbar setItems:editItems];
+//    
+//    itemNav = [[UINavigationItem alloc] initWithTitle:@"Edit Toolbar"];
+//    itemNav.rightBarButtonItem = rightButton;
+//    itemNav.hidesBackButton = YES;
+//    itemNav.leftBarButtonItems = [NSArray arrayWithObjects:editTitle, editMove, nil];
+//    
+//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(handleEdit) userInfo:@"edit" repeats:YES];
     
-    //itemNav = [[UINavigationItem alloc] initWithTitle:@"Edit Toolbar"];
-    //itemNav.rightBarButtonItem = rightButton;
-    //itemNav.hidesBackButton = YES;
-    //itemNav.leftBarButtonItems = [NSArray arrayWithObjects:editTitle, editMove, nil];
-    
-    
-    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(handleEdit) userInfo:@"edit" repeats:YES];
+  
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -115,9 +119,6 @@ int numOfSelectedRows;
     
 }
 
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 3;
-}
 
 -(void)handleEdit{
     if(self.editing && !editButtonToggle)
@@ -125,7 +126,7 @@ int numOfSelectedRows;
         editButtonToggle = true;
         
         [self.navigationController.view addSubview:editbar];
-        //[editbar pushNavigationItem:item animated:YES];
+        //[editbar pushNavigationItem:itemNav animated:YES];
     }
     else if(!self.editing){
         editButtonToggle = false;
@@ -300,8 +301,6 @@ int numOfSelectedRows;
     }
 }
 
-
-
 - (IBAction)clearAll:(id)sender {
     UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete All Files" message:@"Are you sure you want to delete ALL the PDF files?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
     [alert show];
@@ -361,7 +360,6 @@ int numOfSelectedRows;
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
 }
-
 
 
 -(UIImage*)thumbnailForPath:(NSString*)samplepath {

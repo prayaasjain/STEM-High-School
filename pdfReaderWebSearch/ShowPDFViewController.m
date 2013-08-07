@@ -17,11 +17,8 @@
 
 @implementation ShowPDFViewController
 
-@synthesize pdfViewer,backView;
+@synthesize pdfViewer,backView, selection, timer, offset;
 
-NSString *selection;
-NSTimer *timer;
-CGFloat offset;
 
 -(void)viewDidLoad
 {
