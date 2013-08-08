@@ -10,17 +10,37 @@
 #import "ShowPDFViewController.h"
 #include "TargetConditionals.h"
 
+static NSString *kDeleteAllTitle = @"Delete All";
+static NSString *kDeletePartialTitle = @"Delete (%d)";
+
 @interface ListOfPDFViewController ()
+
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *editButton;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *cancelButton;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *deleteButton;
+
+- (IBAction)editAction:(id)sender;
+- (IBAction)cancelAction:(id)sender;
+- (IBAction)deleteAction:(id)sender;
 
 @end
 
 @implementation ListOfPDFViewController
 
-@synthesize listOfPDF,path,url,loadFromSite, mstring, editItems, editbar, itemNav;
+@synthesize listOfPDF,path,url,loadFromSite, mstring, editItems, editbar, itemNav, editButton, cancelButton, deleteButton;
 
 bool editButtonToggle;
 
 int numOfSelectedRows;
+
+- (void)resetUI
+{
+    // leave edit mode for our table and apply the edit button
+    self.navigationItem.leftBarButtonItem = nil;
+    self.navigationItem.rightBarButtonItem = self.editButton;
+    [self.tableView setEditing:NO animated:YES];
+    
+}
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -31,16 +51,6 @@ int numOfSelectedRows;
     return self;
 }
 
-// -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-// if([segue.identifier isEqual: @"showPDF"])
-// {
-// TestViewController *tvc = [segue destinationViewController];
-// //NSLog(@"%@",path);
-// [tvc loadPDF:path];
-// 
-// 
-// }
-// }
 
 -(void)viewDidAppear:(BOOL)animated{
     self.navigationItem.hidesBackButton = true;
@@ -63,30 +73,17 @@ int numOfSelectedRows;
     [self.tableView reloadData];
     
 
-    self.navigationItem.leftBarButtonItem = self.editButtonItem;
     self.tableView.allowsMultipleSelectionDuringEditing = YES;
+    
+    self.deleteButton.tintColor = [UIColor redColor];
+    self.navigationItem.rightBarButtonItem = self.editButton;
+    
+    [self resetUI];
 
-    editButtonToggle = false;
-    editbar = [UIToolbar alloc];
-    editbar.barStyle = UIBarStyleBlack;
-//
-//    UIBarButtonItem *editTitle = [[UIBarButtonItem alloc] initWithTitle:@"Title"
-//    style:UIBarButtonItemStyleBordered target:nil action:nil];
-//    UIBarButtonItem *editMove = [[UIBarButtonItem alloc] initWithTitle:@"Move"
-//    style:UIBarButtonItemStyleBordered target:nil action:nil];
+//    editButtonToggle = false;
+//    editbar = [UIToolbar alloc];
+//    editbar.barStyle = UIBarStyleBlack;
 //    
-//    editItems = [[NSArray alloc] initWithObjects:editTitle, editMove, nil];
-//    [editbar setItems:editItems];
-//    
-//    itemNav = [[UINavigationItem alloc] initWithTitle:@"Edit Toolbar"];
-//    itemNav.rightBarButtonItem = rightButton;
-//    itemNav.hidesBackButton = YES;
-//    itemNav.leftBarButtonItems = [NSArray arrayWithObjects:editTitle, editMove, nil];
-//    
-//    NSTimer *timer = [NSTimer scheduledTimerWithTimeInterval:0.05 target:self selector:@selector(handleEdit) userInfo:@"edit" repeats:YES];
-    
-  
-    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -94,12 +91,23 @@ int numOfSelectedRows;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
+- (void)viewDidUnload
+{
+	[super viewDidUnload];
+	
+	self.listOfPDF = nil;
+	self.tableView = nil;
+    
+    self.editButton = nil;
+    self.cancelButton = nil;
+    self.deleteButton = nil;
+}
+
 -(void)loadArray{
+    
     NSString *string = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     mstring = [[NSMutableString alloc] initWithString:string];
     [mstring appendString:@"/Inbox"];
-    
-    
     
     NSArray *directoryContent = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:mstring error:NULL];
     
@@ -117,22 +125,6 @@ int numOfSelectedRows;
     
     listOfPDF = [[NSMutableArray alloc] initWithArray:paths];
     
-}
-
-
--(void)handleEdit{
-    if(self.editing && !editButtonToggle)
-    {
-        editButtonToggle = true;
-        
-        [self.navigationController.view addSubview:editbar];
-        //[editbar pushNavigationItem:itemNav animated:YES];
-    }
-    else if(!self.editing){
-        editButtonToggle = false;
-        //[editbar popNavigationItemAnimated:YES];
-        [editbar removeFromSuperview];
-    }
 }
 
 - (void)didReceiveMemoryWarning
@@ -213,28 +205,20 @@ int numOfSelectedRows;
 #pragma mark - Table view delegate
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath   {
-    if(self.editing)
+    
+    if(self.tableView.isEditing)
     {
-        numOfSelectedRows = [[tableView indexPathsForSelectedRows] count];
-        // NSLog(@"number: %i",numOfSelectedRows);
-        UINavigationItem *mainitem = [editbar.items objectAtIndex:0];
-        if(numOfSelectedRows == 1)
-        {
-            for(UIBarButtonItem *item in mainitem.leftBarButtonItems)
-            {
-                if([item.title isEqualToString:@"Title"])
-                {
-                    [item setEnabled:YES];
-                    // NSLog(@"ENABLED");
-                }
-            }
-        }
+    
+        NSArray *selectedRows = [self.tableView indexPathsForSelectedRows];
+        self.deleteButton.title = (selectedRows.count == 0) ?
+        kDeleteAllTitle : [NSString stringWithFormat:kDeletePartialTitle, selectedRows.count];
+    
     }
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if(!self.editing)
+    if(!self.tableView.isEditing)
     {
         path = [listOfPDF objectAtIndex:indexPath.row];
         [self performSegueWithIdentifier:@"showPDF" sender:self];
@@ -244,31 +228,14 @@ int numOfSelectedRows;
     }
     else
     {
-        numOfSelectedRows = [[tableView indexPathsForSelectedRows] count];
-        // NSLog(@"number: %i",numOfSelectedRows);
-        UINavigationItem *mainitem = [editbar.items objectAtIndex:0];
-        if(numOfSelectedRows > 1)
+        NSArray *selectedRows = [self.tableView indexPathsForSelectedRows];
+        NSString *deleteButtonTitle = [NSString stringWithFormat:kDeletePartialTitle, selectedRows.count];
+        
+        if (selectedRows.count == self.listOfPDF.count)
         {
-            
-            for(UIBarButtonItem *item in mainitem.leftBarButtonItems)
-            {
-                if([item.title isEqualToString:@"Title"])
-                {
-                    [item setEnabled:NO];
-                }
-            }
+            deleteButtonTitle = kDeleteAllTitle;
         }
-        else if(numOfSelectedRows == 1)
-        {
-            for(UIBarButtonItem *item in mainitem.leftBarButtonItems)
-            {
-                if([item.title isEqualToString:@"Title"])
-                {
-                    [item setEnabled:YES];
-                    // NSLog(@"ENABLED");
-                }
-            }
-        }
+        self.deleteButton.title = deleteButtonTitle;
         
     }
 }
@@ -301,10 +268,6 @@ int numOfSelectedRows;
     }
 }
 
-- (IBAction)clearAll:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Delete All Files" message:@"Are you sure you want to delete ALL the PDF files?" delegate:self cancelButtonTitle:@"No" otherButtonTitles:@"Yes", nil];
-    [alert show];
-}
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
     if([alertView.title isEqual: @"Delete All Files"] && buttonIndex == 1)
     {
@@ -339,23 +302,6 @@ int numOfSelectedRows;
     
     
 }
-/*
- - (IBAction)editButton:(id)sender {
- if(editButtonToggle)
- {
- editButtonToggle = false;
- editButtonOutlet.style = UIBarButtonItemStyleBordered;
- }
- else
- {
- editButtonToggle = true;
- editButtonOutlet.style = UIBarButtonItemStyleDone;
- 
- 
- }
- 
- }
- */
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
     return 100;
@@ -400,7 +346,79 @@ int numOfSelectedRows;
     }
 }
 
+#pragma mark Action methods
 
+- (IBAction)editAction:(id)sender
+{
+    // setup our UI for editing
+    self.navigationItem.rightBarButtonItem = self.cancelButton;
+    
+    self.deleteButton.title = kDeleteAllTitle;
+    
+    self.navigationItem.leftBarButtonItem = self.deleteButton;
+    
+    [self.tableView setEditing:YES animated:YES];
+}
 
+- (IBAction)cancelAction:(id)sender
+{
+    [self resetUI]; // reset our UI
+}
+
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+	// the user clicked one of the OK/Cancel buttons
+	if (buttonIndex == 0)
+	{
+		// delete the selected rows
+        NSArray *selectedRows = [self.tableView indexPathsForSelectedRows];
+        if (selectedRows.count > 0)
+        {
+            // setup our deletion array so they can all be removed at once
+            NSMutableArray *deletionArray = [NSMutableArray array];
+            for (NSIndexPath *selectionIndex in selectedRows)
+            {
+                [deletionArray addObject:[self.listOfPDF objectAtIndex:selectionIndex.row]];
+            }
+            
+            for(int k = 0; k < (int)deletionArray.count; k++)
+            {
+                [[NSFileManager defaultManager]removeItemAtPath:[deletionArray objectAtIndex:k] error:nil];
+            }
+            [self.listOfPDF removeObjectsInArray:deletionArray];
+            
+            // then delete only the rows in our table that were selected
+            [self.tableView deleteRowsAtIndexPaths:selectedRows withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+        else
+        {
+            //[listOfPDF removeAllObjects];
+            [self clearArray];
+            
+            // since we are deleting all the rows, just reload the current table section
+            [self.tableView reloadSections:[NSIndexSet indexSetWithIndex:0] withRowAnimation:UITableViewRowAnimationAutomatic];
+        }
+        
+        [self resetUI]; // reset our UI
+        [self.tableView setEditing:NO animated:YES];
+        
+        self.editButton.enabled = (self.listOfPDF.count > 0) ? YES : NO;
+	}
+}
+
+- (IBAction)deleteAction:(id)sender
+{
+    // open a dialog with just an OK button
+	NSString *actionTitle = ([[self.tableView indexPathsForSelectedRows] count] == 1) ?
+    @"Are you sure you want to remove this document?" : @"Are you sure you want to remove these documents?";
+    
+    UIActionSheet *actionSheet = [[UIActionSheet alloc] initWithTitle:actionTitle
+                                                             delegate:self
+                                                    cancelButtonTitle:@"Cancel"
+                                               destructiveButtonTitle:@"Ok"
+                                                    otherButtonTitles:nil];
+	actionSheet.actionSheetStyle = UIActionSheetStyleDefault;
+	[actionSheet showInView:self.view];	// show from our table view (pops up in the middle of the table)
+}
 
 @end

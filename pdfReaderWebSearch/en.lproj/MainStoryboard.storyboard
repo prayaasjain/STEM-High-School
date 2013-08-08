@@ -28,20 +28,32 @@
                             <outlet property="delegate" destination="6OW-hP-mZq" id="NSS-yD-5cQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="edZ-4j-zhY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="utm-1H-EmA">
-                            <connections>
-                                <action selector="clearAll:" destination="6OW-hP-mZq" id="brU-W2-oxV"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="edZ-4j-zhY"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <connections>
+                        <outlet property="cancelButton" destination="ywi-IB-UaE" id="kC0-cy-Byy"/>
+                        <outlet property="deleteButton" destination="d2B-sE-UIH" id="7Jq-sd-Io2"/>
+                        <outlet property="editButton" destination="Vbu-Ro-xE4" id="qMH-Dv-7yV"/>
                         <segue destination="rfn-mm-2JZ" kind="push" identifier="showPDF" id="Abz-dX-3cC"/>
                         <segue destination="rfn-mm-2JZ" kind="push" identifier="loadFromSite" id="fzR-qB-7T4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="M5r-W7-8Ml" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <barButtonItem systemItem="edit" id="Vbu-Ro-xE4">
+                    <connections>
+                        <action selector="editAction:" destination="6OW-hP-mZq" id="ozt-pj-KJc"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem title="Cancel" id="ywi-IB-UaE">
+                    <connections>
+                        <action selector="cancelAction:" destination="6OW-hP-mZq" id="hrS-0B-Qrq"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem title="Delete All" id="d2B-sE-UIH">
+                    <connections>
+                        <action selector="deleteAction:" destination="6OW-hP-mZq" id="qAS-5C-dld"/>
+                    </connections>
+                </barButtonItem>
             </objects>
             <point key="canvasLocation" x="4862" y="-408"/>
         </scene>
@@ -339,7 +351,13 @@
         <class className="ListOfPDFViewController" superclassName="UITableViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ListOfPDFViewController.h"/>
             <relationships>
+                <relationship kind="action" name="cancelAction:"/>
                 <relationship kind="action" name="clearAll:"/>
+                <relationship kind="action" name="deleteAction:"/>
+                <relationship kind="action" name="editAction:"/>
+                <relationship kind="outlet" name="cancelButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="deleteButton" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="editButton" candidateClass="UIBarButtonItem"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

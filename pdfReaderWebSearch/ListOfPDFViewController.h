@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ListOfPDFViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate,UIAlertViewDelegate>
+@interface ListOfPDFViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate,UIAlertViewDelegate, UIActionSheetDelegate>
 @property NSMutableArray *listOfPDF;
 @property NSString *path;
 @property NSURL *url;
