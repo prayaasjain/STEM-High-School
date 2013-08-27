@@ -63,6 +63,19 @@
         url = [NSURL URLWithString:urlAddress];
         requestObj = [NSURLRequest requestWithURL:url];
     }
+    else if([choice isEqualToString:@"Bluesci"])
+    {
+        urlAddress = [[NSString alloc] initWithFormat:@"http://www.bluesci.org/?s=%@",finalSearchQuery];
+        url = [NSURL URLWithString:urlAddress];
+        requestObj = [NSURLRequest requestWithURL:url];
+    }
+    else if([choice isEqualToString:@"Young Scientist"])
+    {
+        finalSearchQuery = [finalSearchQuery stringByAppendingString:@"&client=default_frontend&proxystylesheet=default_frontend&output=xml_no_dtd&go=GO&sort=date%3AD%3AL%3Ad1&entqr=0&oe=UTF-8&ie=UTF-8&ud=1&site=default_collection"];
+        urlAddress = [[NSString alloc] initWithFormat:@"http://searchvu.vanderbilt.edu/search?q=%@",finalSearchQuery];
+        url = [NSURL URLWithString:urlAddress];
+        requestObj = [NSURLRequest requestWithURL:url];
+    }
     [webView loadRequest:requestObj];
     [addressBar setText:urlAddress];
     
@@ -70,8 +83,8 @@
 
 
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

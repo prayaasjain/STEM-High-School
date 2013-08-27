@@ -12,6 +12,13 @@
 		00F5D297178CB5F100267055 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 00F5D296178CB5F100267055 /* icon.png */; };
 		00F5D29A178DDCC700267055 /* ShowPDFViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5D299178DDCC700267055 /* ShowPDFViewController.m */; };
 		00F5D29D178E076A00267055 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 00F5D29C178E076A00267055 /* CustomView.m */; };
+		D809B99E17BEAB100011220B /* green-board.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B99D17BEAB100011220B /* green-board.png */; };
+		D809B9AC17C41DB40011220B /* button-green.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AB17C41DB40011220B /* button-green.png */; };
+		D809B9AE17C41FAE0011220B /* button-green-wide.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AD17C41FAE0011220B /* button-green-wide.png */; };
+		D809B9B017C4202B0011220B /* green-board-text.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AF17C4202B0011220B /* green-board-text.png */; };
+		D871F34B17BD7A4000A41339 /* bg_wood.png in Resources */ = {isa = PBXBuildFile; fileRef = D871F34A17BD7A4000A41339 /* bg_wood.png */; };
+		D8A2308A17B573E80076300E /* STEM-app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A2308917B573E80076300E /* STEM-app-icon.png */; };
+		D8A2308C17B573F80076300E /* STEM-app-icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A2308B17B573F80076300E /* STEM-app-icon-retina.png */; };
 		D8D1F7941770D2840011A103 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D1F7931770D2840011A103 /* UIKit.framework */; };
 		D8D1F7961770D2840011A103 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D1F7951770D2840011A103 /* Foundation.framework */; };
 		D8D1F7981770D2840011A103 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D1F7971770D2840011A103 /* CoreGraphics.framework */; };
@@ -37,6 +44,13 @@
 		00F5D299178DDCC700267055 /* ShowPDFViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShowPDFViewController.m; sourceTree = "<group>"; };
 		00F5D29B178E076A00267055 /* CustomView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
 		00F5D29C178E076A00267055 /* CustomView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
+		D809B99D17BEAB100011220B /* green-board.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-board.png"; sourceTree = "<group>"; };
+		D809B9AB17C41DB40011220B /* button-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-green.png"; sourceTree = "<group>"; };
+		D809B9AD17C41FAE0011220B /* button-green-wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-green-wide.png"; sourceTree = "<group>"; };
+		D809B9AF17C4202B0011220B /* green-board-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-board-text.png"; sourceTree = "<group>"; };
+		D871F34A17BD7A4000A41339 /* bg_wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_wood.png; sourceTree = "<group>"; };
+		D8A2308917B573E80076300E /* STEM-app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STEM-app-icon.png"; sourceTree = "<group>"; };
+		D8A2308B17B573F80076300E /* STEM-app-icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STEM-app-icon-retina.png"; sourceTree = "<group>"; };
 		D8D1F7901770D2840011A103 /* pdfReaderWebSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pdfReaderWebSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D1F7931770D2840011A103 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8D1F7951770D2840011A103 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -78,6 +92,8 @@
 		D8D1F7871770D2840011A103 = {
 			isa = PBXGroup;
 			children = (
+				D8A2308B17B573F80076300E /* STEM-app-icon-retina.png */,
+				D8A2308917B573E80076300E /* STEM-app-icon.png */,
 				D8D1F7991770D2840011A103 /* pdfReaderWebSearch */,
 				D8D1F7921770D2840011A103 /* Frameworks */,
 				D8D1F7911770D2840011A103 /* Products */,
@@ -130,6 +146,11 @@
 		D8D1F79A1770D2840011A103 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D809B9AF17C4202B0011220B /* green-board-text.png */,
+				D809B9AD17C41FAE0011220B /* button-green-wide.png */,
+				D809B9AB17C41DB40011220B /* button-green.png */,
+				D809B99D17BEAB100011220B /* green-board.png */,
+				D871F34A17BD7A4000A41339 /* bg_wood.png */,
 				D8D1F79B1770D2850011A103 /* pdfReaderWebSearch-Info.plist */,
 				D8D1F79C1770D2850011A103 /* InfoPlist.strings */,
 				D8D1F79F1770D2850011A103 /* main.m */,
@@ -201,6 +222,13 @@
 				D8D1F7AD1770D2850011A103 /* MainStoryboard.storyboard in Resources */,
 				00963C7117739DA40059C226 /* sample.pdf in Resources */,
 				00F5D297178CB5F100267055 /* icon.png in Resources */,
+				D8A2308A17B573E80076300E /* STEM-app-icon.png in Resources */,
+				D8A2308C17B573F80076300E /* STEM-app-icon-retina.png in Resources */,
+				D871F34B17BD7A4000A41339 /* bg_wood.png in Resources */,
+				D809B99E17BEAB100011220B /* green-board.png in Resources */,
+				D809B9AC17C41DB40011220B /* button-green.png in Resources */,
+				D809B9AE17C41FAE0011220B /* button-green-wide.png in Resources */,
+				D809B9B017C4202B0011220B /* green-board-text.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

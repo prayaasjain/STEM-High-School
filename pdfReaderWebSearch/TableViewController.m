@@ -45,16 +45,31 @@ NSMutableArray *searchEngines;
     SearchType *search = [[SearchType alloc]init];
     [search setEngineName:@"Google"];
     [search setSearchURL:@"http://www.google.com/search?q="];
+    [search setSearchDescription:@"www.google.com"];
     [searchEngines addObject:search];
     
     search = [[SearchType alloc]init];
     [search setEngineName:@"Bing"];
     [search setSearchURL:@"http://www.bing.com/search?q="];
+    [search setSearchDescription:@"www.bing.com"];
     [searchEngines addObject:search];
     
     search = [[SearchType alloc]init];
     [search setEngineName:@"Wikipedia"];
     [search setSearchURL:@"http://en.wikipedia.org/wiki/Special:Search?search="];
+    [search setSearchDescription:@"www.wikipedia.org"];
+    [searchEngines addObject:search];
+    
+    search = [[SearchType alloc]init];
+    [search setEngineName:@"Bluesci"];
+    [search setSearchURL:@"http://www.bluesci.org/?s="];
+    [search setSearchDescription:@"Cambridge University science magazine"];
+    [searchEngines addObject:search];
+    
+    search = [[SearchType alloc]init];
+    [search setEngineName:@"Young Scientist"];
+    [search setSearchURL:@"http://searchvu.vanderbilt.edu/search?q="];
+    [search setSearchDescription:@"Vanderbilt University"];
     [searchEngines addObject:search];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -87,12 +102,15 @@ NSMutableArray *searchEngines;
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"SearchCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    UITableViewCell *cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
+    cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     
     // Configure the cell...
     
     SearchType *current = [searchEngines objectAtIndex:[indexPath row]];
     [[cell textLabel] setText:current.engineName];
+    [[cell detailTextLabel] setText:current.searchDescription];
+    
     
     return cell;
 }

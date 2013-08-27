@@ -19,6 +19,8 @@ static NSString *kDeletePartialTitle = @"Delete (%d)";
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *cancelButton;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *deleteButton;
 
+@property (nonatomic, strong) UIImageView *backgroundImage;
+
 - (IBAction)editAction:(id)sender;
 - (IBAction)cancelAction:(id)sender;
 - (IBAction)deleteAction:(id)sender;
@@ -27,7 +29,7 @@ static NSString *kDeletePartialTitle = @"Delete (%d)";
 
 @implementation ListOfPDFViewController
 
-@synthesize listOfPDF,path,url,loadFromSite, mstring, editItems, editbar, itemNav, editButton, cancelButton, deleteButton;
+@synthesize listOfPDF, path, url, loadFromSite, mstring, editItems, editbar, editButton, cancelButton, deleteButton, textLabelCell, backgroundImage;
 
 bool editButtonToggle;
 
@@ -64,9 +66,13 @@ int numOfSelectedRows;
 {
     [super viewDidLoad];
     [self setRestorationIdentifier:@"list"];
-    self.navigationController.navigationBar.topItem.prompt = @"USC";
-    self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
-    [self setTitle:@"List of available PDF Files"];
+    
+    self.tableView.separatorColor = [UIColor clearColor];
+    backgroundImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"bg_wood.png"]];
+    self.tableView.backgroundView = backgroundImage;
+    self.navigationController.navigationBar.topItem.prompt = @"The STEM Education Group";
+    self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
+    [self setTitle:@"Documents"];
     loadFromSite = false;
     
     [self loadArray];
@@ -78,12 +84,12 @@ int numOfSelectedRows;
     self.deleteButton.tintColor = [UIColor redColor];
     self.navigationItem.rightBarButtonItem = self.editButton;
     
+    editbar = [UIToolbar alloc];
+    editbar.barStyle = UIBarStyleBlackTranslucent;
+    
     [self resetUI];
 
-//    editButtonToggle = false;
-//    editbar = [UIToolbar alloc];
-//    editbar.barStyle = UIBarStyleBlack;
-//    
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -151,12 +157,14 @@ int numOfSelectedRows;
 {
     static NSString *CellIdentifier = @"PdfCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
-    
+        
     // Configure the cell...
     
-    // cell.textLabel.text = [listOfPDF objectAtIndex:indexPath.row];
-    cell.textLabel.text = [[[listOfPDF objectAtIndex:indexPath.row] componentsSeparatedByString:mstring] componentsJoinedByString:@""];
-    
+    textLabelCell = [NSString stringWithString:[[[listOfPDF objectAtIndex:indexPath.row] componentsSeparatedByString:mstring] componentsJoinedByString:@""]];
+    NSCharacterSet *remove = [NSCharacterSet characterSetWithCharactersInString:@"/"];
+    textLabelCell = [[textLabelCell componentsSeparatedByCharactersInSet:remove] componentsJoinedByString:@""];
+
+    cell.textLabel.text = textLabelCell;
     cell.imageView.image = [self thumbnailForPath:[listOfPDF objectAtIndex:indexPath.row]];
     cell.indentationWidth = 20;
     
@@ -225,6 +233,12 @@ int numOfSelectedRows;
         UINavigationController *nc = [self navigationController];
         ShowPDFViewController *show = (ShowPDFViewController*)nc.topViewController;
         [show loadPDF:path];
+        
+        NSString *docTitle;
+        docTitle = [NSString stringWithString:[[[listOfPDF objectAtIndex:indexPath.row] componentsSeparatedByString:mstring] componentsJoinedByString:@""]];
+        NSCharacterSet *remove = [NSCharacterSet characterSetWithCharactersInString:@"/"];
+        docTitle = [[docTitle componentsSeparatedByCharactersInSet:remove] componentsJoinedByString:@""];
+        [show setTitle:docTitle];
     }
     else
     {
@@ -313,7 +327,7 @@ int numOfSelectedRows;
     CGPDFDocumentRef pdf = CGPDFDocumentCreateWithURL((__bridge CFURLRef)pdfFileUrl);
     CGPDFPageRef page;
     
-    CGRect aRect = CGRectMake(0, 0, 70, 100); // thumbnail size
+    CGRect aRect = CGRectMake(0, 0, 55, 80); // thumbnail size
     UIGraphicsBeginImageContext(aRect.size);
     CGContextRef context = UIGraphicsGetCurrentContext();
     UIImage* thumbnailImage;
@@ -351,6 +365,11 @@ int numOfSelectedRows;
 - (IBAction)editAction:(id)sender
 {
     // setup our UI for editing
+
+    //    [self.navigationController.navigationBar addSubview:editbar];
+    
+    
+    [self.cancelButton setStyle:UIBarButtonItemStyleDone];
     self.navigationItem.rightBarButtonItem = self.cancelButton;
     
     self.deleteButton.title = kDeleteAllTitle;

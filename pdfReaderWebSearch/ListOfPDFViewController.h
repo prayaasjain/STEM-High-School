@@ -20,7 +20,7 @@
 @property NSMutableString *mstring;
 @property UIToolbar *editbar;
 @property NSArray *editItems;
-@property UINavigationItem *itemNav;
+@property NSString *textLabelCell;
 
 -(UIImage*)thumbnailForPath:(NSString*)samplepath;
 @end
