@@ -358,6 +358,7 @@ int numOfSelectedRows;
         thumbnailImage = UIGraphicsGetImageFromCurrentImageContext();
         return thumbnailImage;
     }
+    return NULL;
 }
 
 #pragma mark Action methods

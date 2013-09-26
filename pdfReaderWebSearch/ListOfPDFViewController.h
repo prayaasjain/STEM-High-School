@@ -12,10 +12,8 @@
 @property NSMutableArray *listOfPDF;
 @property NSString *path;
 @property NSURL *url;
-- (IBAction)clearAll:(id)sender;
 @property bool loadFromSite;
 -(void) clearArray;
--(void) handleEdit;
 
 @property NSMutableString *mstring;
 @property UIToolbar *editbar;

@@ -359,7 +359,6 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ListOfPDFViewController.h"/>
             <relationships>
                 <relationship kind="action" name="cancelAction:"/>
-                <relationship kind="action" name="clearAll:"/>
                 <relationship kind="action" name="deleteAction:"/>
                 <relationship kind="action" name="editAction:"/>
                 <relationship kind="outlet" name="cancelButton" candidateClass="UIBarButtonItem"/>

@@ -41,19 +41,21 @@
     NSString *urlAddress;
     NSURL *url;
     NSURLRequest *requestObj;
-    NSString *finalSearchQuery;
+    NSString *finalSearchQuery, *googleSearchQuery;
     
+    googleSearchQuery = [desiredSearch stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
+    googleSearchQuery = [googleSearchQuery stringByReplacingOccurrencesOfString:@"/" withString:@"%2F"];
     finalSearchQuery = [desiredSearch stringByReplacingOccurrencesOfString:@" " withString:@"+"];
     
     if([choice isEqualToString:@"Google"])
     {
-        urlAddress = [[NSString alloc] initWithFormat:@"http://www.google.com/search?q=%@",finalSearchQuery];
+        urlAddress = [[NSString alloc] initWithFormat:@"http://www.google.com/search?q=%@",googleSearchQuery];
         url = [NSURL URLWithString:urlAddress];
         requestObj = [NSURLRequest requestWithURL:url];
     }
     else if([choice isEqualToString:@"Bing"])
     {
-        urlAddress = [[NSString alloc] initWithFormat:@"http://www.bing.com/search?q=%@",finalSearchQuery];
+        urlAddress = [[NSString alloc] initWithFormat:@"http://www.bing.com/search?q=%@",googleSearchQuery];
         url = [NSURL URLWithString:urlAddress];
         requestObj = [NSURLRequest requestWithURL:url];
     }
