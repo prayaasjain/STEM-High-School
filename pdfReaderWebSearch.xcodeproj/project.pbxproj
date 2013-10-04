@@ -15,6 +15,12 @@
 		D809B9AC17C41DB40011220B /* button-green.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AB17C41DB40011220B /* button-green.png */; };
 		D809B9AE17C41FAE0011220B /* button-green-wide.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AD17C41FAE0011220B /* button-green-wide.png */; };
 		D809B9B017C4202B0011220B /* green-board-text.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AF17C4202B0011220B /* green-board-text.png */; };
+		D82DEF5417FE2C0800B5882B /* PSPDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82DEF4D17FE2C0800B5882B /* PSPDFKit.framework */; };
+		D82DEF5517FE2C0800B5882B /* ACKNOWLEDGEMENTS in Resources */ = {isa = PBXBuildFile; fileRef = D82DEF4F17FE2C0800B5882B /* ACKNOWLEDGEMENTS */; };
+		D82DEF5617FE2C0800B5882B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D82DEF5017FE2C0800B5882B /* LICENSE */; };
+		D82DEF5717FE2C0800B5882B /* PSPDFKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D82DEF5117FE2C0800B5882B /* PSPDFKit.bundle */; };
+		D82DEF5817FE2C0800B5882B /* PSPDFKit.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D82DEF5217FE2C0800B5882B /* PSPDFKit.xcconfig */; };
+		D82DEF5917FE2C0800B5882B /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = D82DEF5317FE2C0800B5882B /* VERSION */; };
 		D871F34B17BD7A4000A41339 /* bg_wood.png in Resources */ = {isa = PBXBuildFile; fileRef = D871F34A17BD7A4000A41339 /* bg_wood.png */; };
 		D8A2308A17B573E80076300E /* STEM-app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A2308917B573E80076300E /* STEM-app-icon.png */; };
 		D8A2308C17B573F80076300E /* STEM-app-icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A2308B17B573F80076300E /* STEM-app-icon-retina.png */; };
@@ -46,6 +52,12 @@
 		D809B9AB17C41DB40011220B /* button-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-green.png"; sourceTree = "<group>"; };
 		D809B9AD17C41FAE0011220B /* button-green-wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-green-wide.png"; sourceTree = "<group>"; };
 		D809B9AF17C4202B0011220B /* green-board-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-board-text.png"; sourceTree = "<group>"; };
+		D82DEF4D17FE2C0800B5882B /* PSPDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PSPDFKit.framework; sourceTree = "<group>"; };
+		D82DEF4F17FE2C0800B5882B /* ACKNOWLEDGEMENTS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ACKNOWLEDGEMENTS; sourceTree = "<group>"; };
+		D82DEF5017FE2C0800B5882B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		D82DEF5117FE2C0800B5882B /* PSPDFKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PSPDFKit.bundle; sourceTree = "<group>"; };
+		D82DEF5217FE2C0800B5882B /* PSPDFKit.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = PSPDFKit.xcconfig; sourceTree = "<group>"; };
+		D82DEF5317FE2C0800B5882B /* VERSION */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
 		D871F34A17BD7A4000A41339 /* bg_wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_wood.png; sourceTree = "<group>"; };
 		D8A2308917B573E80076300E /* STEM-app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STEM-app-icon.png"; sourceTree = "<group>"; };
 		D8A2308B17B573F80076300E /* STEM-app-icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STEM-app-icon-retina.png"; sourceTree = "<group>"; };
@@ -81,12 +93,34 @@
 				D8D1F7941770D2840011A103 /* UIKit.framework in Frameworks */,
 				D8D1F7961770D2840011A103 /* Foundation.framework in Frameworks */,
 				D8D1F7981770D2840011A103 /* CoreGraphics.framework in Frameworks */,
+				D82DEF5417FE2C0800B5882B /* PSPDFKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D82DEF4C17FE2C0800B5882B /* PSPDFKit.embeddedframework */ = {
+			isa = PBXGroup;
+			children = (
+				D82DEF4D17FE2C0800B5882B /* PSPDFKit.framework */,
+				D82DEF4E17FE2C0800B5882B /* Resources */,
+			);
+			path = PSPDFKit.embeddedframework;
+			sourceTree = "<group>";
+		};
+		D82DEF4E17FE2C0800B5882B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D82DEF4F17FE2C0800B5882B /* ACKNOWLEDGEMENTS */,
+				D82DEF5017FE2C0800B5882B /* LICENSE */,
+				D82DEF5117FE2C0800B5882B /* PSPDFKit.bundle */,
+				D82DEF5217FE2C0800B5882B /* PSPDFKit.xcconfig */,
+				D82DEF5317FE2C0800B5882B /* VERSION */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		D8D1F7871770D2840011A103 = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +143,7 @@
 		D8D1F7921770D2840011A103 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D82DEF4C17FE2C0800B5882B /* PSPDFKit.embeddedframework */,
 				D8D1F7931770D2840011A103 /* UIKit.framework */,
 				D8D1F7951770D2840011A103 /* Foundation.framework */,
 				D8D1F7971770D2840011A103 /* CoreGraphics.framework */,
@@ -213,7 +248,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D1F79E1770D2850011A103 /* InfoPlist.strings in Resources */,
+				D82DEF5817FE2C0800B5882B /* PSPDFKit.xcconfig in Resources */,
 				D8D1F7A61770D2850011A103 /* Default.png in Resources */,
+				D82DEF5917FE2C0800B5882B /* VERSION in Resources */,
 				D8D1F7A81770D2850011A103 /* Default@2x.png in Resources */,
 				D8D1F7AA1770D2850011A103 /* Default-568h@2x.png in Resources */,
 				D8D1F7AD1770D2850011A103 /* MainStoryboard.storyboard in Resources */,
@@ -221,8 +258,11 @@
 				D8A2308A17B573E80076300E /* STEM-app-icon.png in Resources */,
 				D8A2308C17B573F80076300E /* STEM-app-icon-retina.png in Resources */,
 				D871F34B17BD7A4000A41339 /* bg_wood.png in Resources */,
+				D82DEF5617FE2C0800B5882B /* LICENSE in Resources */,
 				D809B99E17BEAB100011220B /* green-board.png in Resources */,
 				D809B9AC17C41DB40011220B /* button-green.png in Resources */,
+				D82DEF5717FE2C0800B5882B /* PSPDFKit.bundle in Resources */,
+				D82DEF5517FE2C0800B5882B /* ACKNOWLEDGEMENTS in Resources */,
 				D809B9AE17C41FAE0011220B /* button-green-wide.png in Resources */,
 				D809B9B017C4202B0011220B /* green-board-text.png in Resources */,
 			);
@@ -271,6 +311,7 @@
 /* Begin XCBuildConfiguration section */
 		D8D1F7B11770D2850011A103 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D82DEF5217FE2C0800B5882B /* PSPDFKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -303,6 +344,7 @@
 		};
 		D8D1F7B21770D2850011A103 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D82DEF5217FE2C0800B5882B /* PSPDFKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -330,10 +372,17 @@
 		D8D1F7B41770D2850011A103 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/prayaasjain/pdfReaderWebSearch/PSPDFKit.embeddedframework,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pdfReaderWebSearch/pdfReaderWebSearch-Prefix.pch";
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.1;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -341,10 +390,17 @@
 		D8D1F7B51770D2850011A103 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/prayaasjain/pdfReaderWebSearch/PSPDFKit.embeddedframework,
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pdfReaderWebSearch/pdfReaderWebSearch-Prefix.pch";
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos6.1;
+				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
