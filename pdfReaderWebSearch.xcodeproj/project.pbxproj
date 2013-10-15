@@ -15,15 +15,17 @@
 		D809B9AC17C41DB40011220B /* button-green.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AB17C41DB40011220B /* button-green.png */; };
 		D809B9AE17C41FAE0011220B /* button-green-wide.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AD17C41FAE0011220B /* button-green-wide.png */; };
 		D809B9B017C4202B0011220B /* green-board-text.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AF17C4202B0011220B /* green-board-text.png */; };
-		D82DEF5417FE2C0800B5882B /* PSPDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D82DEF4D17FE2C0800B5882B /* PSPDFKit.framework */; };
-		D82DEF5517FE2C0800B5882B /* ACKNOWLEDGEMENTS in Resources */ = {isa = PBXBuildFile; fileRef = D82DEF4F17FE2C0800B5882B /* ACKNOWLEDGEMENTS */; };
-		D82DEF5617FE2C0800B5882B /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = D82DEF5017FE2C0800B5882B /* LICENSE */; };
-		D82DEF5717FE2C0800B5882B /* PSPDFKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D82DEF5117FE2C0800B5882B /* PSPDFKit.bundle */; };
-		D82DEF5817FE2C0800B5882B /* PSPDFKit.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D82DEF5217FE2C0800B5882B /* PSPDFKit.xcconfig */; };
-		D82DEF5917FE2C0800B5882B /* VERSION in Resources */ = {isa = PBXBuildFile; fileRef = D82DEF5317FE2C0800B5882B /* VERSION */; };
 		D871F34B17BD7A4000A41339 /* bg_wood.png in Resources */ = {isa = PBXBuildFile; fileRef = D871F34A17BD7A4000A41339 /* bg_wood.png */; };
 		D8A2308A17B573E80076300E /* STEM-app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A2308917B573E80076300E /* STEM-app-icon.png */; };
 		D8A2308C17B573F80076300E /* STEM-app-icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A2308B17B573F80076300E /* STEM-app-icon-retina.png */; };
+		D8BFB89F180CACE0002DA2E0 /* PSPDFKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8BFB896180CACE0002DA2E0 /* PSPDFKit.framework */; };
+		D8BFB8A0180CACE0002DA2E0 /* PSPDFKit-Acknowledgements in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB898180CACE0002DA2E0 /* PSPDFKit-Acknowledgements */; };
+		D8BFB8A1180CACE0002DA2E0 /* PSPDFKit-License in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB899180CACE0002DA2E0 /* PSPDFKit-License */; };
+		D8BFB8A2180CACE0002DA2E0 /* PSPDFKit-License.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB89A180CACE0002DA2E0 /* PSPDFKit-License.pdf */; };
+		D8BFB8A3180CACE0002DA2E0 /* PSPDFKit-nosqlite.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB89B180CACE0002DA2E0 /* PSPDFKit-nosqlite.xcconfig */; };
+		D8BFB8A4180CACE0002DA2E0 /* PSPDFKit-Version in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB89C180CACE0002DA2E0 /* PSPDFKit-Version */; };
+		D8BFB8A5180CACE0002DA2E0 /* PSPDFKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB89D180CACE0002DA2E0 /* PSPDFKit.bundle */; };
+		D8BFB8A6180CACE0002DA2E0 /* PSPDFKit.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB89E180CACE0002DA2E0 /* PSPDFKit.xcconfig */; };
 		D8D1F7941770D2840011A103 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D1F7931770D2840011A103 /* UIKit.framework */; };
 		D8D1F7961770D2840011A103 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D1F7951770D2840011A103 /* Foundation.framework */; };
 		D8D1F7981770D2840011A103 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D1F7971770D2840011A103 /* CoreGraphics.framework */; };
@@ -52,15 +54,17 @@
 		D809B9AB17C41DB40011220B /* button-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-green.png"; sourceTree = "<group>"; };
 		D809B9AD17C41FAE0011220B /* button-green-wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-green-wide.png"; sourceTree = "<group>"; };
 		D809B9AF17C4202B0011220B /* green-board-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-board-text.png"; sourceTree = "<group>"; };
-		D82DEF4D17FE2C0800B5882B /* PSPDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PSPDFKit.framework; sourceTree = "<group>"; };
-		D82DEF4F17FE2C0800B5882B /* ACKNOWLEDGEMENTS */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ACKNOWLEDGEMENTS; sourceTree = "<group>"; };
-		D82DEF5017FE2C0800B5882B /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		D82DEF5117FE2C0800B5882B /* PSPDFKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PSPDFKit.bundle; sourceTree = "<group>"; };
-		D82DEF5217FE2C0800B5882B /* PSPDFKit.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = PSPDFKit.xcconfig; sourceTree = "<group>"; };
-		D82DEF5317FE2C0800B5882B /* VERSION */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = VERSION; sourceTree = "<group>"; };
 		D871F34A17BD7A4000A41339 /* bg_wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_wood.png; sourceTree = "<group>"; };
 		D8A2308917B573E80076300E /* STEM-app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STEM-app-icon.png"; sourceTree = "<group>"; };
 		D8A2308B17B573F80076300E /* STEM-app-icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STEM-app-icon-retina.png"; sourceTree = "<group>"; };
+		D8BFB896180CACE0002DA2E0 /* PSPDFKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = PSPDFKit.framework; sourceTree = "<group>"; };
+		D8BFB898180CACE0002DA2E0 /* PSPDFKit-Acknowledgements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PSPDFKit-Acknowledgements"; sourceTree = "<group>"; };
+		D8BFB899180CACE0002DA2E0 /* PSPDFKit-License */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PSPDFKit-License"; sourceTree = "<group>"; };
+		D8BFB89A180CACE0002DA2E0 /* PSPDFKit-License.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "PSPDFKit-License.pdf"; sourceTree = "<group>"; };
+		D8BFB89B180CACE0002DA2E0 /* PSPDFKit-nosqlite.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = "PSPDFKit-nosqlite.xcconfig"; sourceTree = "<group>"; };
+		D8BFB89C180CACE0002DA2E0 /* PSPDFKit-Version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PSPDFKit-Version"; sourceTree = "<group>"; };
+		D8BFB89D180CACE0002DA2E0 /* PSPDFKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PSPDFKit.bundle; sourceTree = "<group>"; };
+		D8BFB89E180CACE0002DA2E0 /* PSPDFKit.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = PSPDFKit.xcconfig; sourceTree = "<group>"; };
 		D8D1F7901770D2840011A103 /* pdfReaderWebSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pdfReaderWebSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D1F7931770D2840011A103 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8D1F7951770D2840011A103 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -93,30 +97,32 @@
 				D8D1F7941770D2840011A103 /* UIKit.framework in Frameworks */,
 				D8D1F7961770D2840011A103 /* Foundation.framework in Frameworks */,
 				D8D1F7981770D2840011A103 /* CoreGraphics.framework in Frameworks */,
-				D82DEF5417FE2C0800B5882B /* PSPDFKit.framework in Frameworks */,
+				D8BFB89F180CACE0002DA2E0 /* PSPDFKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		D82DEF4C17FE2C0800B5882B /* PSPDFKit.embeddedframework */ = {
+		D8BFB895180CACE0002DA2E0 /* PSPDFKit.embeddedframework */ = {
 			isa = PBXGroup;
 			children = (
-				D82DEF4D17FE2C0800B5882B /* PSPDFKit.framework */,
-				D82DEF4E17FE2C0800B5882B /* Resources */,
+				D8BFB896180CACE0002DA2E0 /* PSPDFKit.framework */,
+				D8BFB897180CACE0002DA2E0 /* Resources */,
 			);
 			path = PSPDFKit.embeddedframework;
 			sourceTree = "<group>";
 		};
-		D82DEF4E17FE2C0800B5882B /* Resources */ = {
+		D8BFB897180CACE0002DA2E0 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				D82DEF4F17FE2C0800B5882B /* ACKNOWLEDGEMENTS */,
-				D82DEF5017FE2C0800B5882B /* LICENSE */,
-				D82DEF5117FE2C0800B5882B /* PSPDFKit.bundle */,
-				D82DEF5217FE2C0800B5882B /* PSPDFKit.xcconfig */,
-				D82DEF5317FE2C0800B5882B /* VERSION */,
+				D8BFB898180CACE0002DA2E0 /* PSPDFKit-Acknowledgements */,
+				D8BFB899180CACE0002DA2E0 /* PSPDFKit-License */,
+				D8BFB89A180CACE0002DA2E0 /* PSPDFKit-License.pdf */,
+				D8BFB89B180CACE0002DA2E0 /* PSPDFKit-nosqlite.xcconfig */,
+				D8BFB89C180CACE0002DA2E0 /* PSPDFKit-Version */,
+				D8BFB89D180CACE0002DA2E0 /* PSPDFKit.bundle */,
+				D8BFB89E180CACE0002DA2E0 /* PSPDFKit.xcconfig */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -143,7 +149,7 @@
 		D8D1F7921770D2840011A103 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D82DEF4C17FE2C0800B5882B /* PSPDFKit.embeddedframework */,
+				D8BFB895180CACE0002DA2E0 /* PSPDFKit.embeddedframework */,
 				D8D1F7931770D2840011A103 /* UIKit.framework */,
 				D8D1F7951770D2840011A103 /* Foundation.framework */,
 				D8D1F7971770D2840011A103 /* CoreGraphics.framework */,
@@ -222,7 +228,7 @@
 		D8D1F7881770D2840011A103 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Prayaas Jain";
 			};
 			buildConfigurationList = D8D1F78B1770D2840011A103 /* Build configuration list for PBXProject "pdfReaderWebSearch" */;
@@ -248,22 +254,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D1F79E1770D2850011A103 /* InfoPlist.strings in Resources */,
-				D82DEF5817FE2C0800B5882B /* PSPDFKit.xcconfig in Resources */,
+				D8BFB8A2180CACE0002DA2E0 /* PSPDFKit-License.pdf in Resources */,
 				D8D1F7A61770D2850011A103 /* Default.png in Resources */,
-				D82DEF5917FE2C0800B5882B /* VERSION in Resources */,
 				D8D1F7A81770D2850011A103 /* Default@2x.png in Resources */,
 				D8D1F7AA1770D2850011A103 /* Default-568h@2x.png in Resources */,
 				D8D1F7AD1770D2850011A103 /* MainStoryboard.storyboard in Resources */,
 				00963C7117739DA40059C226 /* sample.pdf in Resources */,
+				D8BFB8A5180CACE0002DA2E0 /* PSPDFKit.bundle in Resources */,
 				D8A2308A17B573E80076300E /* STEM-app-icon.png in Resources */,
 				D8A2308C17B573F80076300E /* STEM-app-icon-retina.png in Resources */,
 				D871F34B17BD7A4000A41339 /* bg_wood.png in Resources */,
-				D82DEF5617FE2C0800B5882B /* LICENSE in Resources */,
+				D8BFB8A1180CACE0002DA2E0 /* PSPDFKit-License in Resources */,
 				D809B99E17BEAB100011220B /* green-board.png in Resources */,
+				D8BFB8A6180CACE0002DA2E0 /* PSPDFKit.xcconfig in Resources */,
+				D8BFB8A4180CACE0002DA2E0 /* PSPDFKit-Version in Resources */,
 				D809B9AC17C41DB40011220B /* button-green.png in Resources */,
-				D82DEF5717FE2C0800B5882B /* PSPDFKit.bundle in Resources */,
-				D82DEF5517FE2C0800B5882B /* ACKNOWLEDGEMENTS in Resources */,
 				D809B9AE17C41FAE0011220B /* button-green-wide.png in Resources */,
+				D8BFB8A0180CACE0002DA2E0 /* PSPDFKit-Acknowledgements in Resources */,
+				D8BFB8A3180CACE0002DA2E0 /* PSPDFKit-nosqlite.xcconfig in Resources */,
 				D809B9B017C4202B0011220B /* green-board-text.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -311,7 +319,6 @@
 /* Begin XCBuildConfiguration section */
 		D8D1F7B11770D2850011A103 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D82DEF5217FE2C0800B5882B /* PSPDFKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -344,7 +351,6 @@
 		};
 		D8D1F7B21770D2850011A103 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D82DEF5217FE2C0800B5882B /* PSPDFKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

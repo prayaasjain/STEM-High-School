@@ -49,7 +49,7 @@ typedef NS_ENUM(NSInteger, PSPDFSearchMode) {
 /// If NO, only pageRanges will be searched.
 @property (nonatomic, assign) BOOL shouldSearchAllPages;
 
-/// We have to limit the number of search results to something resonable (memory constraints)
+/// We have to limit the number of search results to something reasonable (memory constraints)
 @property (nonatomic, assign) NSUInteger maximumNumberOfSearchResults;
 
 /// Set the searchMode for the search. Defaults to PSPDFSearchModeHighlighting.

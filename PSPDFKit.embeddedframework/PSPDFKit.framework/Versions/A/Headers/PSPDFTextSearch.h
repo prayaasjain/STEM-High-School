@@ -21,16 +21,16 @@
 @optional
 
 /// Called when search is started.
-- (void)willStartSearch:(PSPDFTextSearch *)textSearch forTerm:(NSString *)searchTerm isFullSearch:(BOOL)isFullSearch;
+- (void)willStartSearch:(PSPDFTextSearch *)textSearch term:(NSString *)searchTerm isFullSearch:(BOOL)isFullSearch;
 
 /// Search was updated, a new page has been scanned.
-- (void)didUpdateSearch:(PSPDFTextSearch *)textSearch forTerm:(NSString *)searchTerm newSearchResults:(NSArray *)searchResults forPage:(NSUInteger)page;
+- (void)didUpdateSearch:(PSPDFTextSearch *)textSearch term:(NSString *)searchTerm newSearchResults:(NSArray *)searchResults page:(NSUInteger)page;
 
 /// Search has finished.
-- (void)didFinishSearch:(PSPDFTextSearch *)textSearch forTerm:(NSString *)searchTerm searchResults:(NSArray *)searchResults isFullSearch:(BOOL)isFullSearch;
+- (void)didFinishSearch:(PSPDFTextSearch *)textSearch term:(NSString *)searchTerm searchResults:(NSArray *)searchResults isFullSearch:(BOOL)isFullSearch;
 
 /// Search has been cancelled.
-- (void)didCancelSearch:(PSPDFTextSearch *)textSearch forTerm:(NSString *)searchTerm isFullSearch:(BOOL)isFullSearch;
+- (void)didCancelSearch:(PSPDFTextSearch *)textSearch term:(NSString *)searchTerm isFullSearch:(BOOL)isFullSearch;
 
 @end
 
@@ -64,7 +64,7 @@
 /// If NSRegularExpressionSearch is enabled, hyphenations and newlines between the body text will be ignored (which is good, better results)
 @property (nonatomic, assign) NSStringCompareOptions compareOptions;
 
-/// We have to limit the number of search results to something resonable. Defaults to 600.
+/// We have to limit the number of search results to something reasonable. Defaults to 600.
 @property (nonatomic, assign) NSUInteger maximumNumberOfSearchResults;
 
 /// The document that is searched.

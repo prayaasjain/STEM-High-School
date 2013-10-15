@@ -16,7 +16,6 @@
 
 /// Get string from CGPDFDictionary.
 extern inline NSString *PSPDFDictionaryGetString(CGPDFDictionaryRef pdfDict, NSString *key);
-
 extern inline NSString *PSPDFDictionaryGetStringC(CGPDFDictionaryRef pdfDict, const char *key);
 
 /// Get string from CGPDFArray.
@@ -30,7 +29,7 @@ extern id PSPDFDictionaryGetObjectForPath(CGPDFDictionaryRef pdfDict, NSString *
 extern NSDate *PSPDFDictionaryGetDateC(CGPDFDictionaryRef pdfDict, const char *key);
 
 /// Like PSPDFDictionaryGetObjectForPath, but type safe.
-id PSPDFDictionaryGetObjectForPathOfType(CGPDFDictionaryRef pdfDict, NSString *keyPath, Class returnClass);
+extern id PSPDFDictionaryGetObjectForPathOfType(CGPDFDictionaryRef pdfDict, NSString *keyPath, Class returnClass);
 
 extern PSPDFStream *PSPDFDictionaryGetStreamForPath(CGPDFDictionaryRef pdfDict, NSString *keyPath);
 extern NSNumber *PSPDFDictionaryGetNumberC(CGPDFDictionaryRef pdfDict, const char *key);
