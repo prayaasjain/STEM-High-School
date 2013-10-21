@@ -7,23 +7,12 @@
 //
 
 #import "ListOfPDFViewController.h"
-#import "ShowPDFViewController.h"
-#include "TargetConditionals.h"
+
 
 static NSString *kDeleteAllTitle = @"Delete All";
 static NSString *kDeletePartialTitle = @"Delete (%d)";
 
 @interface ListOfPDFViewController ()
-
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *editButton;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *cancelButton;
-@property (nonatomic, strong) IBOutlet UIBarButtonItem *deleteButton;
-
-@property (nonatomic, strong) UIImageView *backgroundImage;
-
-- (IBAction)editAction:(id)sender;
-- (IBAction)cancelAction:(id)sender;
-- (IBAction)deleteAction:(id)sender;
 
 @end
 
@@ -31,12 +20,7 @@ static NSString *kDeletePartialTitle = @"Delete (%d)";
 
 @synthesize listOfPDF, path, url, loadFromSite, mstring, editItems, editbar, editButton, cancelButton, deleteButton, textLabelCell, backgroundImage;
 
-bool editButtonToggle;
-
-int numOfSelectedRows;
-
-- (void)resetUI
-{
+- (void)resetUI {
     // leave edit mode for our table and apply the edit button
     self.navigationItem.leftBarButtonItem = nil;
     self.navigationItem.rightBarButtonItem = self.editButton;
@@ -44,8 +28,7 @@ int numOfSelectedRows;
     
 }
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
+- (id)initWithStyle:(UITableViewStyle)style {
     self = [super initWithStyle:style];
     if (self) {
         // Custom initialization
@@ -53,17 +36,15 @@ int numOfSelectedRows;
     return self;
 }
 
-
--(void)viewDidAppear:(BOOL)animated{
+-(void)viewDidAppear:(BOOL)animated {
     self.navigationItem.hidesBackButton = true;
     [self loadArray];
     [self.tableView reloadData];
     
 }
 
-
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
     [self setRestorationIdentifier:@"list"];
     
@@ -78,7 +59,6 @@ int numOfSelectedRows;
     [self loadArray];
     [self.tableView reloadData];
     
-
     self.tableView.allowsMultipleSelectionDuringEditing = YES;
     
     self.deleteButton.tintColor = [UIColor redColor];
@@ -88,7 +68,6 @@ int numOfSelectedRows;
     editbar.barStyle = UIBarStyleBlackTranslucent;
     
     [self resetUI];
-
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -97,9 +76,9 @@ int numOfSelectedRows;
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
-- (void)viewDidUnload
-{
-	[super viewDidUnload];
+- (void)viewDidUnload {
+	
+    [super viewDidUnload];
 	
 	self.listOfPDF = nil;
 	self.tableView = nil;
@@ -109,7 +88,7 @@ int numOfSelectedRows;
     self.deleteButton = nil;
 }
 
--(void)loadArray{
+-(void)loadArray {
     
     NSString *string = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) objectAtIndex:0];
     mstring = [[NSMutableString alloc] initWithString:string];
@@ -133,28 +112,28 @@ int numOfSelectedRows;
     
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
+
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    
     // Return the number of sections.
     return 1;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
     // Return the number of rows in the section.
     return listOfPDF.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
     static NSString *CellIdentifier = @"PdfCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
         
@@ -212,10 +191,9 @@ int numOfSelectedRows;
 
 #pragma mark - Table view delegate
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath   {
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    if(self.tableView.isEditing)
-    {
+    if(self.tableView.isEditing) {
     
         NSArray *selectedRows = [self.tableView indexPathsForSelectedRows];
         self.deleteButton.title = (selectedRows.count == 0) ?
@@ -224,15 +202,25 @@ int numOfSelectedRows;
     }
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(!self.tableView.isEditing)
-    {
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(!self.tableView.isEditing) {
+    
         path = [listOfPDF objectAtIndex:indexPath.row];
         [self performSegueWithIdentifier:@"showPDF" sender:self];
-        UINavigationController *nc = [self navigationController];
+        
+        //create the PSPDF document
+        NSURL *documentPath = [[NSURL alloc] initFileURLWithPath:path];
+        PSPDFDocument *document = [PSPDFDocument documentWithURL:documentPath];
+        
+        //Open view controller
+        PSPDFViewController *pdfController = [[PSPDFViewController alloc] initWithDocument:document];
+        UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:pdfController];
+        [self presentViewController:nc animated:YES completion:NULL];
+        
         ShowPDFViewController *show = (ShowPDFViewController*)nc.topViewController;
-        [show loadPDF:path];
+//        [show loadPDF:path];
+        
         
         NSString *docTitle;
         docTitle = [NSString stringWithString:[[[listOfPDF objectAtIndex:indexPath.row] componentsSeparatedByString:mstring] componentsJoinedByString:@""]];
@@ -240,13 +228,11 @@ int numOfSelectedRows;
         docTitle = [[docTitle componentsSeparatedByCharactersInSet:remove] componentsJoinedByString:@""];
         [show setTitle:docTitle];
     }
-    else
-    {
+    else {
         NSArray *selectedRows = [self.tableView indexPathsForSelectedRows];
         NSString *deleteButtonTitle = [NSString stringWithFormat:kDeletePartialTitle, selectedRows.count];
         
-        if (selectedRows.count == self.listOfPDF.count)
-        {
+        if (selectedRows.count == self.listOfPDF.count) {
             deleteButtonTitle = kDeleteAllTitle;
         }
         self.deleteButton.title = deleteButtonTitle;
@@ -254,10 +240,9 @@ int numOfSelectedRows;
     }
 }
 
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if(editingStyle == UITableViewCellEditingStyleDelete)
-    {
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if(editingStyle == UITableViewCellEditingStyleDelete) {
         
         // NSLog(@"object: %@",[listOfPDF objectAtIndex:indexPath.row]);
         NSString *pathToDelete = [listOfPDF objectAtIndex:indexPath.row];
@@ -275,7 +260,8 @@ int numOfSelectedRows;
             [listOfPDF removeObjectAtIndex:indexPath.row];
             //and remove cell
             [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationLeft];
-        }else{
+        }
+        else {
             UIAlertView *alertView=[[UIAlertView alloc]initWithTitle:@"Alert!" message:@"File can not be deleted" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
             [alertView show];
         }
@@ -283,22 +269,21 @@ int numOfSelectedRows;
 }
 
 - (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
-    if([alertView.title isEqual: @"Delete All Files"] && buttonIndex == 1)
-    {
+    
+    if([alertView.title isEqual: @"Delete All Files"] && buttonIndex == 1) {
         [self clearArray];
     }
-    else if([alertView.title isEqualToString:@"Edit Title"] && buttonIndex == 1)
-    {
+    else if([alertView.title isEqualToString:@"Edit Title"] && buttonIndex == 1) {
         NSString *newTitle = [alertView textFieldAtIndex:0].text;
         NSInteger row = alertView.accessibilityHint.integerValue;
         [[self.tableView.visibleCells objectAtIndex:row] textLabel].text = newTitle;
         editButtonToggle = false;
         //editButtonOutlet.style = UIBarButtonItemStyleBordered;
-        
     }
 }
 
 -(void)clearArray{
+    
     //NSLog(@"Count: %i",listOfPDF.count);
     NSMutableArray *pathsToDelete = [[NSMutableArray alloc] init];
     
@@ -313,16 +298,16 @@ int numOfSelectedRows;
     }
     [listOfPDF removeAllObjects];
     [self.tableView reloadData];
-    
-    
+
 }
 
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 100;
 }
 
 
 -(UIImage*)thumbnailForPath:(NSString*)samplepath {
+    
     NSURL *pdfFileUrl = [NSURL fileURLWithPath:samplepath];
     CGPDFDocumentRef pdf = CGPDFDocumentCreateWithURL((__bridge CFURLRef)pdfFileUrl);
     CGPDFPageRef page;
@@ -332,11 +317,9 @@ int numOfSelectedRows;
     CGContextRef context = UIGraphicsGetCurrentContext();
     UIImage* thumbnailImage;
     
-    
     NSUInteger totalNum = CGPDFDocumentGetNumberOfPages(pdf);
     
     for(int i = 0; i < totalNum; i++ ) {
-        
         
         CGContextSaveGState(context);
         CGContextTranslateCTM(context, 0.0, aRect.size.height);
@@ -363,46 +346,36 @@ int numOfSelectedRows;
 
 #pragma mark Action methods
 
-- (IBAction)editAction:(id)sender
-{
-    // setup our UI for editing
+- (IBAction)editAction:(id)sender {
 
-    //    [self.navigationController.navigationBar addSubview:editbar];
-    
+    // setup our UI for editing
+    // [self.navigationController.navigationBar addSubview:editbar];
     
     [self.cancelButton setStyle:UIBarButtonItemStyleDone];
     self.navigationItem.rightBarButtonItem = self.cancelButton;
-    
     self.deleteButton.title = kDeleteAllTitle;
-    
     self.navigationItem.leftBarButtonItem = self.deleteButton;
-    
     [self.tableView setEditing:YES animated:YES];
 }
 
-- (IBAction)cancelAction:(id)sender
-{
+- (IBAction)cancelAction:(id)sender {
     [self resetUI]; // reset our UI
 }
 
-- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-	// the user clicked one of the OK/Cancel buttons
-	if (buttonIndex == 0)
-	{
+- (void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex {
+	
+    // the user clicked one of the OK/Cancel buttons
+	if (buttonIndex == 0) {
 		// delete the selected rows
         NSArray *selectedRows = [self.tableView indexPathsForSelectedRows];
-        if (selectedRows.count > 0)
-        {
+        if (selectedRows.count > 0) {
             // setup our deletion array so they can all be removed at once
             NSMutableArray *deletionArray = [NSMutableArray array];
-            for (NSIndexPath *selectionIndex in selectedRows)
-            {
+            for (NSIndexPath *selectionIndex in selectedRows) {
                 [deletionArray addObject:[self.listOfPDF objectAtIndex:selectionIndex.row]];
             }
             
-            for(int k = 0; k < (int)deletionArray.count; k++)
-            {
+            for(int k = 0; k < (int)deletionArray.count; k++) {
                 [[NSFileManager defaultManager]removeItemAtPath:[deletionArray objectAtIndex:k] error:nil];
             }
             [self.listOfPDF removeObjectsInArray:deletionArray];
@@ -410,8 +383,7 @@ int numOfSelectedRows;
             // then delete only the rows in our table that were selected
             [self.tableView deleteRowsAtIndexPaths:selectedRows withRowAnimation:UITableViewRowAnimationAutomatic];
         }
-        else
-        {
+        else {
             //[listOfPDF removeAllObjects];
             [self clearArray];
             
@@ -426,8 +398,7 @@ int numOfSelectedRows;
 	}
 }
 
-- (IBAction)deleteAction:(id)sender
-{
+- (IBAction)deleteAction:(id)sender {
     // open a dialog with just an OK button
 	NSString *actionTitle = ([[self.tableView indexPathsForSelectedRows] count] == 1) ?
     @"Are you sure you want to remove this document?" : @"Are you sure you want to remove these documents?";

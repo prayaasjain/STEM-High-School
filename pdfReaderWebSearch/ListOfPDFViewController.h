@@ -7,18 +7,37 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ShowPDFViewController.h"
+#include "TargetConditionals.h"
 
-@interface ListOfPDFViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate,UIAlertViewDelegate, UIActionSheetDelegate>
+@interface ListOfPDFViewController : UITableViewController <UITableViewDelegate, UITableViewDataSource, UINavigationControllerDelegate,UIAlertViewDelegate, UIActionSheetDelegate> {
+    
+    bool editButtonToggle;
+    int numOfSelectedRows;
+}
+
 @property NSMutableArray *listOfPDF;
-@property NSString *path;
-@property NSURL *url;
+@property (weak) NSString *path;
+@property (weak) NSURL *url;
 @property bool loadFromSite;
+
 -(void) clearArray;
 
 @property NSMutableString *mstring;
 @property UIToolbar *editbar;
-@property NSArray *editItems;
-@property NSString *textLabelCell;
+@property (weak) NSArray *editItems;
+@property (weak) NSString *textLabelCell;
 
 -(UIImage*)thumbnailForPath:(NSString*)samplepath;
+
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *editButton;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *cancelButton;
+@property (nonatomic, strong) IBOutlet UIBarButtonItem *deleteButton;
+
+@property (nonatomic, strong) UIImageView *backgroundImage;
+
+- (IBAction)editAction:(id)sender;
+- (IBAction)cancelAction:(id)sender;
+- (IBAction)deleteAction:(id)sender;
+
 @end

@@ -7,9 +7,7 @@
 //
 
 #import "ShowPDFViewController.h"
-#import "ViewController.h"
-#import "ListOfPDFViewController.h"
-#import "MenuViewController.h"
+
 
 @interface ShowPDFViewController ()
 
@@ -27,7 +25,6 @@
     [pdfViewer setScalesPageToFit:YES];
     [self setRestorationIdentifier:@"showpdf"];
     
-    
     //    NSString *path = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"pdf"];
     //    NSURL *url = [[NSURL alloc] initFileURLWithPath:path];
     //    NSURLRequest *request = [NSURLRequest requestWithURL:url];
@@ -40,30 +37,24 @@
     
     [[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObjects:menuItem,highlightMenuItem, nil]];
     
-   
-    
 }
 
 
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if([segue.identifier isEqualToString:@"showSearch"])
-    {
+    
+    if([segue.identifier isEqualToString:@"showSearch"]) {
         ViewController *vc = [segue destinationViewController];
         vc.highlighted = selection;
         vc.show = self;
     }
-    else if([segue.identifier isEqualToString:@"showMenu"])
-    {
+    else if([segue.identifier isEqualToString:@"showMenu"]) {
         MenuViewController *mvc = [segue destinationViewController];
         mvc.show = self;
     }
-    else if([segue.identifier isEqualToString:@"backtopdf"])
-    {
+    else if([segue.identifier isEqualToString:@"backtopdf"]) {
         ListOfPDFViewController *lop = [segue destinationViewController];
         lop.navigationItem.hidesBackButton = YES;
-        
-        
     }
 }
 

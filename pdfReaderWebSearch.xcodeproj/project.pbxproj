@@ -319,6 +319,7 @@
 /* Begin XCBuildConfiguration section */
 		D8D1F7B11770D2850011A103 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8BFB89E180CACE0002DA2E0 /* PSPDFKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -351,6 +352,7 @@
 		};
 		D8D1F7B21770D2850011A103 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D8BFB89E180CACE0002DA2E0 /* PSPDFKit.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -378,6 +380,7 @@
 		D8D1F7B41770D2850011A103 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/prayaasjain/pdfReaderWebSearch/PSPDFKit.embeddedframework,
@@ -387,7 +390,7 @@
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};
@@ -396,6 +399,7 @@
 		D8D1F7B51770D2850011A103 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/prayaasjain/pdfReaderWebSearch/PSPDFKit.embeddedframework,
@@ -405,7 +409,7 @@
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SDKROOT = iphoneos6.1;
+				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
 			};

@@ -7,6 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PSPDFKit/PSPDFKit.h>
+#import "TestViewController.h"
+#import "ListOfPDFViewController.h"
+
 
 @class TestViewController;
 @class ListOfPDFViewController;

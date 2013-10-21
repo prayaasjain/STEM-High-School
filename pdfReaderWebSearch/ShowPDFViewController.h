@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PSPDFKit/PSPDFKit.h>
+
 #import "CustomView.h"
+#import "ViewController.h"
+#import "ListOfPDFViewController.h"
+#import "MenuViewController.h"
 
 @class ListOfPDFViewController;
 
@@ -19,8 +24,8 @@
 -(void)loadPDF:(NSString *)path;
 -(void)loadURL:(NSURL *)url;
 
-@property NSString *selection;
-@property NSTimer  *timer;
+@property (weak) NSString *selection;
+@property (weak) NSTimer  *timer;
 @property CGFloat *offset;
 
 @end

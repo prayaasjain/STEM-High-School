@@ -7,8 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import "TestViewController.h"
-#import "ListOfPDFViewController.h"
 
 @implementation AppDelegate
 
@@ -16,6 +14,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    // Activates PSPDFKit for com.stem-ed.pdfReaderWebSearch
+    PSPDFSetLicenseKey("tQZSWNVoyCGSu4B4t0Rpyuokcj9EfcsiFkFTFUYl7oFTypRwv4DfMrNBU3IP"
+                       "3YTsRQxylr7sJZJBo/FTr+hLG165vS38Lgjhf96eYYQeyjFnishNS7CI8yd9"
+                       "zOKRsfLBFFWzxGvMXuO2FXIxQ9IHetBMtiMZixpsYADLug5kYK9RJnNDU5yt"
+                       "4JpunwU47RHUvagC/IJbjrgszs6uz8yqqIkQrCIeO/+UzEzTqz8UqXY00Scp"
+                       "1/wjJyeR9yOEeBc03OOKZW2URDLLpnhVzo6t34lxPzaY1ZkD65+xZvSM9+7c"
+                       "3yCl2XNzOL4fPnvDu0Vd6uiR+C6ErKojt1aTdfDD/WO5k8kxvL4mYGCe7tSe"
+                       "JdnG1PiRQLrCgGrsWcWtumdh1efvM9OccnF42TaTKxMxw5yfh6gOpoNZXJdZ"
+                       "ULpJg+6PyeQEWvcHhXqlDysrw6g5RIr8C0aCC3vEMLWfybaVwo/d+Yw409gi"
+                       "oAzYyZswXyE=");
+    
     // Override point for customization after application launch.
     return YES;
 }

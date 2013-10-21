@@ -7,8 +7,7 @@
 //
 
 #import "WebViewController.h"
-#import "ViewController.h"
-#import "ShowPDFViewController.h"
+
 @implementation WebViewController
 
 @synthesize webView, addressBar, activityIndicator,selectedSearchEngine,desiredSearch,show,vc;

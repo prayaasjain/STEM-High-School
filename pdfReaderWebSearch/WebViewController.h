@@ -7,6 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ViewController.h"
+#import "ShowPDFViewController.h"
 
 @class ShowPDFViewController;
 @class ViewController;
@@ -16,9 +18,9 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *addressBar;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property NSString *selectedSearchEngine, *desiredSearch;
-@property ShowPDFViewController *show;
-@property ViewController *vc;
+@property (weak) NSString *selectedSearchEngine, *desiredSearch;
+@property (weak) ShowPDFViewController *show;
+@property (weak) ViewController *vc;
 
 - (IBAction)gotoAddress:(id)sender;
 - (IBAction)goBack:(id)sender;

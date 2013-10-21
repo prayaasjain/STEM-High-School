@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "SearchType.h"
-
 #import "WebViewController.h"
+#import "TableViewController.h"
+#import "ShowPDFViewController.h"
+
 @class ShowPDFViewController;
 
 @interface ViewController : UIViewController <UIPopoverControllerDelegate>
@@ -18,8 +19,8 @@
 @property (nonatomic,strong) SearchType *currentSearchEngine;
 @property (weak, nonatomic) IBOutlet UIButton *selectSearchButton;
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
-@property NSString *highlighted;
-@property ShowPDFViewController *show;
+@property (weak) NSString *highlighted;
+@property (weak) ShowPDFViewController *show;
 - (IBAction)backButton:(id)sender;
 
 @end

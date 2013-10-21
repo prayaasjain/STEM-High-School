@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
 #import "SearchType.h"
-
 #import "ViewController.h"
 
-@interface TableViewController : UITableViewController
-@property (weak, nonatomic) UIPopoverController *popoverController; 
-@property ViewController *vc;
+@class ViewController;
 
+@interface TableViewController : UITableViewController {
+    
+}
+
+@property (weak, nonatomic) UIPopoverController *popoverController;
+@property (weak) ViewController *vc;
 
 @end
