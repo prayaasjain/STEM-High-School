@@ -212,14 +212,13 @@ static NSString *kDeletePartialTitle = @"Delete (%d)";
         //create the PSPDF document
         NSURL *documentPath = [[NSURL alloc] initFileURLWithPath:path];
         PSPDFDocument *document = [PSPDFDocument documentWithURL:documentPath];
-        
+       
         //Open view controller
-        PSPDFViewController *pdfController = [[PSPDFViewController alloc] initWithDocument:document];
-        UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:pdfController];
-        [self presentViewController:nc animated:YES completion:NULL];
+
+        UINavigationController *nc = [self navigationController];
         
         ShowPDFViewController *show = (ShowPDFViewController*)nc.topViewController;
-//        [show loadPDF:path];
+        [show initWithDocument:document];
         
         
         NSString *docTitle;

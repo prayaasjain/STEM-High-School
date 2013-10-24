@@ -12,12 +12,11 @@
 #import "CustomView.h"
 #import "ViewController.h"
 #import "ListOfPDFViewController.h"
-#import "MenuViewController.h"
 
 @class ListOfPDFViewController;
 
 
-@interface ShowPDFViewController : UIViewController
+@interface ShowPDFViewController : PSPDFViewController
 @property (weak, nonatomic) IBOutlet UIWebView *pdfViewer;
 @property (weak, nonatomic) IBOutlet CustomView *backView;
 

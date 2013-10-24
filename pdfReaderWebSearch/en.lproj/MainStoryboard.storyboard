@@ -57,10 +57,10 @@
             </objects>
             <point key="canvasLocation" x="4862" y="-408"/>
         </scene>
-        <!--ShowPDF View Controller-->
+        <!--View Controller-->
         <scene sceneID="5uz-8k-OiZ">
             <objects>
-                <viewController id="rfn-mm-2JZ" customClass="ShowPDFViewController" sceneMemberID="viewController">
+                <viewController id="rfn-mm-2JZ" customClass="PSPDFViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zTw-SG-kf9"/>
                         <viewControllerLayoutGuide type="bottom" id="t1Y-1N-xRs"/>

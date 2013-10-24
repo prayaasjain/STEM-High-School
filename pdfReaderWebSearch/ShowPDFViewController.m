@@ -31,11 +31,17 @@
     //    [pdfViewer loadRequest:request];
     //    NSLog(@"Sample loaded path: %@\n",request.debugDescription);
     
-    UIMenuItem *menuItem = [[UIMenuItem alloc] initWithTitle:@"Search"
+    UIMenuItem *search = [[UIMenuItem alloc] initWithTitle:@"Search"
                                                       action:@selector(customAction:)];
-    UIMenuItem *highlightMenuItem = [[UIMenuItem alloc] initWithTitle:@"Highlight" action:@selector(highlight:)];
+    [[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObjects:search, nil]];
     
-    [[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObjects:menuItem,highlightMenuItem, nil]];
+}
+
+-(id) initWithDocument:(PSPDFDocument *)document {
+    
+    self = [super initWithDocument:document];
+    
+    return self;
     
 }
 
@@ -47,10 +53,6 @@
         ViewController *vc = [segue destinationViewController];
         vc.highlighted = selection;
         vc.show = self;
-    }
-    else if([segue.identifier isEqualToString:@"showMenu"]) {
-        MenuViewController *mvc = [segue destinationViewController];
-        mvc.show = self;
     }
     else if([segue.identifier isEqualToString:@"backtopdf"]) {
         ListOfPDFViewController *lop = [segue destinationViewController];
@@ -71,9 +73,9 @@
     if (action == @selector(customAction:)) {
         return YES;
     }
-    if (action == @selector(highlight:)) {
-        return YES;
-    }
+//    if (action == @selector(highlight:)) {
+//        return YES;
+//    }
     return NO;
 }
 
@@ -89,28 +91,26 @@
     
 }
 
-- (void)highlight:(id)sender {
-    NSString *js = @"document.execCommand('HiliteColor')";
-    [pdfViewer stringByEvaluatingJavaScriptFromString:js];
-    
-}
-
-
+//- (void)highlight:(id)sender {
+//    NSString *js = @"document.execCommand('HiliteColor')";
+//    [pdfViewer stringByEvaluatingJavaScriptFromString:js];
+//    
+//}
 
 -(void)loadPDF:(NSString *)path{
-    
+
     NSURL *url = [[NSURL alloc] initFileURLWithPath:path];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [pdfViewer loadRequest:request];
     //NSLog(@"Should of loaded path: %@",path);
 }
 
--(void)goToPage:(int)page {
-    CGFloat goaly = 1068 * (page-1);
-    CGPoint goal = CGPointMake(pdfViewer.scrollView.contentOffset.x, goaly);
-    
-    [pdfViewer.scrollView setContentOffset:goal animated:YES];
-}
+//-(void)goToPage:(int)page {
+//    CGFloat goaly = 1068 * (page-1);
+//    CGPoint goal = CGPointMake(pdfViewer.scrollView.contentOffset.x, goaly);
+//    
+//    [pdfViewer.scrollView setContentOffset:goal animated:YES];
+//}
 
 -(void)loadURL:(NSURL *)url{
     //NSLog(@"YUP");
