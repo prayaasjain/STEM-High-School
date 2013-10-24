@@ -113,7 +113,7 @@
 //}
 
 -(void)loadURL:(NSURL *)url{
-    //NSLog(@"YUP");
+    NSLog(@"loadURL being called");
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [pdfViewer loadRequest:request];
 }

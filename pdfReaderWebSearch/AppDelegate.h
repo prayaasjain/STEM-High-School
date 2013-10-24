@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <PSPDFKit/PSPDFKit.h>
-#import "TestViewController.h"
+#import "ShowPDFViewController.h"
 #import "ListOfPDFViewController.h"
 
 
@@ -19,6 +19,6 @@
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) ListOfPDFViewController *lop;
-@property (strong, nonatomic) TestViewController *tvc;
+@property (strong, nonatomic) ShowPDFViewController *show;
 
 @end

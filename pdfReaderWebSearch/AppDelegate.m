@@ -7,10 +7,11 @@
 //
 
 #import "AppDelegate.h"
+#import <PSPDFKit/PSPDFKit.h>
 
 @implementation AppDelegate
 
-@synthesize lop,tvc;
+@synthesize lop,show;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
@@ -62,16 +63,20 @@
     
     if([nc.topViewController.restorationIdentifier isEqual: @"list"])
     {
+        NSLog(@"list");
     [nc.topViewController performSegueWithIdentifier:@"loadFromSite" sender:self];
-    tvc = (TestViewController*)nc.topViewController;
-        [tvc loadURL:url];
+    show = (ShowPDFViewController*)nc.topViewController;
+        PSPDFDocument *document = [[PSPDFDocument alloc] initWithURL:url];
+        [show setDocument:document];
     }
     else if([nc.topViewController.restorationIdentifier isEqualToString:@"showpdf"])
     {
-        tvc = (TestViewController*)nc.topViewController;
-        [tvc loadURL:url];
+        NSLog(@"show");
+        show = (ShowPDFViewController*)nc.topViewController;
+        [show loadURL:url];;
+        
     }
-    
+   
     return YES;
 }
 

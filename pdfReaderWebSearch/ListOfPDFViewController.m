@@ -139,11 +139,12 @@ static NSString *kDeletePartialTitle = @"Delete (%d)";
         
     // Configure the cell...
     
-    textLabelCell = [NSString stringWithString:[[[listOfPDF objectAtIndex:indexPath.row] componentsSeparatedByString:mstring] componentsJoinedByString:@""]];
+    NSString *docTitle;
+    docTitle = [NSString stringWithString:[[[listOfPDF objectAtIndex:indexPath.row] componentsSeparatedByString:mstring] componentsJoinedByString:@""]];
     NSCharacterSet *remove = [NSCharacterSet characterSetWithCharactersInString:@"/"];
-    textLabelCell = [[textLabelCell componentsSeparatedByCharactersInSet:remove] componentsJoinedByString:@""];
+    docTitle = [[docTitle componentsSeparatedByCharactersInSet:remove] componentsJoinedByString:@""];
 
-    cell.textLabel.text = textLabelCell;
+    cell.textLabel.text = docTitle;
     cell.imageView.image = [self thumbnailForPath:[listOfPDF objectAtIndex:indexPath.row]];
     cell.indentationWidth = 20;
     
@@ -218,7 +219,7 @@ static NSString *kDeletePartialTitle = @"Delete (%d)";
         UINavigationController *nc = [self navigationController];
         
         ShowPDFViewController *show = (ShowPDFViewController*)nc.topViewController;
-        [show initWithDocument:document];
+        [show setDocument:document];
         
         
         NSString *docTitle;

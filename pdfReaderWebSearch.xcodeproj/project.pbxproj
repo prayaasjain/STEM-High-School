@@ -22,10 +22,8 @@
 		D8BFB8A0180CACE0002DA2E0 /* PSPDFKit-Acknowledgements in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB898180CACE0002DA2E0 /* PSPDFKit-Acknowledgements */; };
 		D8BFB8A1180CACE0002DA2E0 /* PSPDFKit-License in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB899180CACE0002DA2E0 /* PSPDFKit-License */; };
 		D8BFB8A2180CACE0002DA2E0 /* PSPDFKit-License.pdf in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB89A180CACE0002DA2E0 /* PSPDFKit-License.pdf */; };
-		D8BFB8A3180CACE0002DA2E0 /* PSPDFKit-nosqlite.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB89B180CACE0002DA2E0 /* PSPDFKit-nosqlite.xcconfig */; };
 		D8BFB8A4180CACE0002DA2E0 /* PSPDFKit-Version in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB89C180CACE0002DA2E0 /* PSPDFKit-Version */; };
 		D8BFB8A5180CACE0002DA2E0 /* PSPDFKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB89D180CACE0002DA2E0 /* PSPDFKit.bundle */; };
-		D8BFB8A6180CACE0002DA2E0 /* PSPDFKit.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = D8BFB89E180CACE0002DA2E0 /* PSPDFKit.xcconfig */; };
 		D8D1F7941770D2840011A103 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D1F7931770D2840011A103 /* UIKit.framework */; };
 		D8D1F7961770D2840011A103 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D1F7951770D2840011A103 /* Foundation.framework */; };
 		D8D1F7981770D2840011A103 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D1F7971770D2840011A103 /* CoreGraphics.framework */; };
@@ -230,6 +228,11 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Prayaas Jain";
+				TargetAttributes = {
+					D8D1F78F1770D2840011A103 = {
+						DevelopmentTeam = S2R746MWT4;
+					};
+				};
 			};
 			buildConfigurationList = D8D1F78B1770D2840011A103 /* Build configuration list for PBXProject "pdfReaderWebSearch" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -266,12 +269,10 @@
 				D871F34B17BD7A4000A41339 /* bg_wood.png in Resources */,
 				D8BFB8A1180CACE0002DA2E0 /* PSPDFKit-License in Resources */,
 				D809B99E17BEAB100011220B /* green-board.png in Resources */,
-				D8BFB8A6180CACE0002DA2E0 /* PSPDFKit.xcconfig in Resources */,
 				D8BFB8A4180CACE0002DA2E0 /* PSPDFKit-Version in Resources */,
 				D809B9AC17C41DB40011220B /* button-green.png in Resources */,
 				D809B9AE17C41FAE0011220B /* button-green-wide.png in Resources */,
 				D8BFB8A0180CACE0002DA2E0 /* PSPDFKit-Acknowledgements in Resources */,
-				D8BFB8A3180CACE0002DA2E0 /* PSPDFKit-nosqlite.xcconfig in Resources */,
 				D809B9B017C4202B0011220B /* green-board-text.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,15 +382,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/prayaasjain/pdfReaderWebSearch/PSPDFKit.embeddedframework,
+					/Users/peppysisay/pdfReaderWebSearch/PSPDFKit.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pdfReaderWebSearch/pdfReaderWebSearch-Prefix.pch";
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
@@ -400,15 +404,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/prayaasjain/pdfReaderWebSearch/PSPDFKit.embeddedframework,
+					/Users/peppysisay/pdfReaderWebSearch/PSPDFKit.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pdfReaderWebSearch/pdfReaderWebSearch-Prefix.pch";
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
