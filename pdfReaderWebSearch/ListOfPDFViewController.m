@@ -203,6 +203,17 @@ static NSString *kDeletePartialTitle = @"Delete (%d)";
     }
 }
 
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    if([segue.identifier isEqualToString:@"showPDF"])
+    {
+        ShowPDFViewController *show = (ShowPDFViewController*)[segue destinationViewController];
+        NSURL *documentPath = [[NSURL alloc] initFileURLWithPath:path];
+        PSPDFDocument *document = [PSPDFDocument documentWithURL:documentPath];
+        //[show commonInitWithDocument:document];
+        [show setDocument:document];
+    }
+}
+
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     if(!self.tableView.isEditing) {
@@ -210,18 +221,21 @@ static NSString *kDeletePartialTitle = @"Delete (%d)";
         path = [listOfPDF objectAtIndex:indexPath.row];
         [self performSegueWithIdentifier:@"showPDF" sender:self];
         
-        //create the PSPDF document
+//        //create the PSPDF document
         NSURL *documentPath = [[NSURL alloc] initFileURLWithPath:path];
         PSPDFDocument *document = [PSPDFDocument documentWithURL:documentPath];
-       
-        //Open view controller
-
+        
+          //Open view controller
         UINavigationController *nc = [self navigationController];
-        
+       
         ShowPDFViewController *show = (ShowPDFViewController*)nc.topViewController;
-        [show setDocument:document];
+        //[show commonInitWithDocument:document];
         
-        
+//        ShowPDFViewController *show = [ShowPDFViewController alloc];
+//        [show commonInitWithDocument:document];
+//        [self performSegueWithIdentifier:@"showPDF" sender:self];
+//        
+       
         NSString *docTitle;
         docTitle = [NSString stringWithString:[[[listOfPDF objectAtIndex:indexPath.row] componentsSeparatedByString:mstring] componentsJoinedByString:@""]];
         NSCharacterSet *remove = [NSCharacterSet characterSetWithCharactersInString:@"/"];

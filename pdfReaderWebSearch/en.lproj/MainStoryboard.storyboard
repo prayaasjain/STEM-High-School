@@ -57,11 +57,10 @@
             </objects>
             <point key="canvasLocation" x="4862" y="-408"/>
         </scene>
-        <!--View Controller-->
+        <!--ShowPDF View Controller-->
         <scene sceneID="5uz-8k-OiZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="E8o-Qh-kTA" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="rfn-mm-2JZ" customClass="PSPDFViewController" sceneMemberID="viewController">
+                <viewController restorationIdentifier="showpdf" id="rfn-mm-2JZ" customClass="ShowPDFViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zTw-SG-kf9"/>
                         <viewControllerLayoutGuide type="bottom" id="t1Y-1N-xRs"/>
@@ -69,41 +68,22 @@
                     <view key="view" contentMode="scaleToFill" id="4s4-qu-eSy">
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uU7-Md-ivR" customClass="CustomView">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mtQ-he-LWS">
-                                <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                            </webView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="mtQ-he-LWS" firstAttribute="trailing" secondItem="4s4-qu-eSy" secondAttribute="trailing" id="91R-pu-ep0"/>
-                            <constraint firstItem="uU7-Md-ivR" firstAttribute="bottom" secondItem="4s4-qu-eSy" secondAttribute="bottom" id="QE9-1S-4I3"/>
-                            <constraint firstItem="uU7-Md-ivR" firstAttribute="trailing" secondItem="4s4-qu-eSy" secondAttribute="trailing" id="QQn-Nq-xSD"/>
-                            <constraint firstItem="mtQ-he-LWS" firstAttribute="leading" secondItem="4s4-qu-eSy" secondAttribute="leading" id="TGQ-xF-u1x"/>
-                            <constraint firstItem="mtQ-he-LWS" firstAttribute="top" secondItem="4s4-qu-eSy" secondAttribute="top" id="Zb0-1P-W6n"/>
-                            <constraint firstItem="uU7-Md-ivR" firstAttribute="leading" secondItem="4s4-qu-eSy" secondAttribute="leading" id="bjp-Zl-pkJ"/>
-                            <constraint firstItem="mtQ-he-LWS" firstAttribute="bottom" secondItem="4s4-qu-eSy" secondAttribute="bottom" id="peB-iJ-SJ2"/>
-                            <constraint firstItem="uU7-Md-ivR" firstAttribute="top" secondItem="4s4-qu-eSy" secondAttribute="top" id="sHv-J9-qXg"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="vtd-el-02E">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="I45-8n-YSY">
                             <connections>
+                                <action selector="clickedSearchButton:" destination="rfn-mm-2JZ" id="tQL-ug-qWz"/>
                                 <segue destination="2" kind="modal" identifier="showSearch" modalPresentationStyle="formSheet" id="3F1-cP-OCK"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="backView" destination="uU7-Md-ivR" id="628-v4-p1j"/>
-                        <outlet property="pdfViewer" destination="mtQ-he-LWS" id="sdh-xU-oOX"/>
+                        <outlet property="searchButton" destination="I45-8n-YSY" id="dM6-8U-jNv"/>
                         <segue destination="2" kind="modal" identifier="showSearch" modalPresentationStyle="formSheet" id="NVo-fU-Tdd"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E8o-Qh-kTA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="5761" y="-395"/>
         </scene>

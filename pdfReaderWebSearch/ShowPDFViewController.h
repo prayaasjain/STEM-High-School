@@ -16,15 +16,19 @@
 @class ListOfPDFViewController;
 
 
-@interface ShowPDFViewController : PSPDFViewController
+@interface ShowPDFViewController : PSPDFViewController 
 @property (weak, nonatomic) IBOutlet UIWebView *pdfViewer;
 @property (weak, nonatomic) IBOutlet CustomView *backView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *searchButton;
 
--(void)loadPDF:(NSString *)path;
+-(void) loadPDF:(NSString *)path;
 -(void)loadURL:(NSURL *)url;
+-(void)addCustomButtons;
+- (IBAction)clickedSearchButton:(id)sender;
 
 @property (weak) NSString *selection;
 @property (weak) NSTimer  *timer;
 @property CGFloat *offset;
+@property (strong) UIMenuItem *search;
 
 @end

@@ -73,7 +73,8 @@
     {
         NSLog(@"show");
         show = (ShowPDFViewController*)nc.topViewController;
-        [show loadURL:url];;
+        PSPDFDocument *document = [[PSPDFDocument alloc] initWithURL:url];
+        [show setDocument:document];
         
     }
    
