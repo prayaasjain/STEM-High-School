@@ -15,10 +15,6 @@
 		D809B9AC17C41DB40011220B /* button-green.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AB17C41DB40011220B /* button-green.png */; };
 		D809B9AE17C41FAE0011220B /* button-green-wide.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AD17C41FAE0011220B /* button-green-wide.png */; };
 		D809B9B017C4202B0011220B /* green-board-text.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AF17C4202B0011220B /* green-board-text.png */; };
-		D829F32A18284993003B4CFA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D829F32918284993003B4CFA /* CoreLocation.framework */; };
-		D829F32C182849A3003B4CFA /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D829F32B182849A3003B4CFA /* MapKit.framework */; };
-		D829F32E182849AD003B4CFA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D829F32D182849AD003B4CFA /* Security.framework */; };
-		D829F330182849CB003B4CFA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D829F32F182849CB003B4CFA /* libsqlite3.dylib */; };
 		D871F34B17BD7A4000A41339 /* bg_wood.png in Resources */ = {isa = PBXBuildFile; fileRef = D871F34A17BD7A4000A41339 /* bg_wood.png */; };
 		D8A2308A17B573E80076300E /* STEM-app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A2308917B573E80076300E /* STEM-app-icon.png */; };
 		D8A2308C17B573F80076300E /* STEM-app-icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A2308B17B573F80076300E /* STEM-app-icon-retina.png */; };
@@ -56,10 +52,6 @@
 		D809B9AB17C41DB40011220B /* button-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-green.png"; sourceTree = "<group>"; };
 		D809B9AD17C41FAE0011220B /* button-green-wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-green-wide.png"; sourceTree = "<group>"; };
 		D809B9AF17C4202B0011220B /* green-board-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-board-text.png"; sourceTree = "<group>"; };
-		D829F32918284993003B4CFA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		D829F32B182849A3003B4CFA /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		D829F32D182849AD003B4CFA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		D829F32F182849CB003B4CFA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D871F34A17BD7A4000A41339 /* bg_wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_wood.png; sourceTree = "<group>"; };
 		D8A2308917B573E80076300E /* STEM-app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STEM-app-icon.png"; sourceTree = "<group>"; };
 		D8A2308B17B573F80076300E /* STEM-app-icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STEM-app-icon-retina.png"; sourceTree = "<group>"; };
@@ -100,10 +92,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D829F330182849CB003B4CFA /* libsqlite3.dylib in Frameworks */,
-				D829F32E182849AD003B4CFA /* Security.framework in Frameworks */,
-				D829F32C182849A3003B4CFA /* MapKit.framework in Frameworks */,
-				D829F32A18284993003B4CFA /* CoreLocation.framework in Frameworks */,
 				D8D1F7941770D2840011A103 /* UIKit.framework in Frameworks */,
 				D8D1F7961770D2840011A103 /* Foundation.framework in Frameworks */,
 				D8D1F7981770D2840011A103 /* CoreGraphics.framework in Frameworks */,
@@ -159,10 +147,6 @@
 		D8D1F7921770D2840011A103 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				D829F32F182849CB003B4CFA /* libsqlite3.dylib */,
-				D829F32D182849AD003B4CFA /* Security.framework */,
-				D829F32B182849A3003B4CFA /* MapKit.framework */,
-				D829F32918284993003B4CFA /* CoreLocation.framework */,
 				D8BFB895180CACE0002DA2E0 /* PSPDFKit.embeddedframework */,
 				D8D1F7931770D2840011A103 /* UIKit.framework */,
 				D8D1F7951770D2840011A103 /* Foundation.framework */,
@@ -397,13 +381,12 @@
 		D8D1F7B41770D2850011A103 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/prayaasjain/pdfReaderWebSearch/PSPDFKit.embeddedframework,
+					/Users/peppysisay/pdfReaderWebSearch/PSPDFKit.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pdfReaderWebSearch/pdfReaderWebSearch-Prefix.pch";
@@ -420,13 +403,12 @@
 		D8D1F7B51770D2850011A103 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/prayaasjain/pdfReaderWebSearch/PSPDFKit.embeddedframework,
+					/Users/peppysisay/pdfReaderWebSearch/PSPDFKit.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pdfReaderWebSearch/pdfReaderWebSearch-Prefix.pch";
