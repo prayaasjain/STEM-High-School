@@ -25,40 +25,17 @@
     pdfViewer.userInteractionEnabled = YES;
     [pdfViewer setScalesPageToFit:YES];
     [self setRestorationIdentifier:@"showpdf"];
-    
-    //    NSString *path = [[NSBundle mainBundle] pathForResource:@"sample" ofType:@"pdf"];
-    //    NSURL *url = [[NSURL alloc] initFileURLWithPath:path];
-    //    NSURLRequest *request = [NSURLRequest requestWithURL:url];
-    //    [pdfViewer loadRequest:request];
-    //    NSLog(@"Sample loaded path: %@\n",request.debugDescription);
-    
-//    search = [[UIMenuItem alloc] initWithTitle:@"Search"
-//                                                      action:@selector(customAction:)];
-//    [searchButton ]
-    //[[UIMenuController sharedMenuController] setMenuItems:[NSArray arrayWithObjects:search, nil]];
-    //self.rightBarButtonItems = [self.rightBarButtonItems arrayByAddingObject:searchButton];
-    PSPDFBarButtonItem *more = [[PSPDFBarButtonItem alloc] initWithTitle:@"test" style:UIBarButtonItemStyleBordered target:self action:nil];
-    NSMutableArray *barButtonItems = [[NSMutableArray alloc] init];
-   
-    [barButtonItems addObject:searchButton];
-    [barButtonItems addObject:more]; //added an empty button, additionalBarButtonItems must have at least two items
-    
-    
-    self.additionalBarButtonItems = barButtonItems;
-    
-    self.additionalActionsButtonItem.target = self;
-    self.additionalActionsButtonItem.action = @selector(showActionSheet);
-    }
+    self.rightBarButtonItems = [self.rightBarButtonItems arrayByAddingObject:searchButton];
 
--(void)showActionSheet {
-    NSLog(@"This should do something to show action sheet with the added buttons...");
-    //under progess..
-   
 }
 
-- (IBAction)clickedSearchButton:(id)sender {
-    NSLog(@"Clicked search button");
++(void)load {
+    [super load];
+    [PSPDFMenuItem installMenuHandlerForObject:[[ShowPDFViewController alloc]init]];
 }
+
+
+
 
 -(void) commonInitWithDocument:(PSPDFDocument *)document   {
     [super commonInitWithDocument:document];
@@ -72,8 +49,6 @@
     return self;
     
 }
-
-
 
 -(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     

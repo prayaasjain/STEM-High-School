@@ -23,8 +23,6 @@
 
 -(void) loadPDF:(NSString *)path;
 -(void)loadURL:(NSURL *)url;
--(void)addCustomButtons;
-- (IBAction)clickedSearchButton:(id)sender;
 
 @property (weak) NSString *selection;
 @property (weak) NSTimer  *timer;
