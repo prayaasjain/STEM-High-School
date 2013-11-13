@@ -16,7 +16,7 @@
 @class ListOfPDFViewController;
 
 
-@interface ShowPDFViewController : PSPDFViewController 
+@interface ShowPDFViewController : PSPDFViewController <PSPDFViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *pdfViewer;
 @property (weak, nonatomic) IBOutlet CustomView *backView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *searchButton;

@@ -25,13 +25,63 @@
     pdfViewer.userInteractionEnabled = YES;
     [pdfViewer setScalesPageToFit:YES];
     [self setRestorationIdentifier:@"showpdf"];
+    self.delegate = self;
     self.rightBarButtonItems = [self.rightBarButtonItems arrayByAddingObject:searchButton];
+    
+    //UIMenuItem *custom = [[UIMenuItem alloc] initWithTitle:@"CUSTOM" action:@selector(customAction:)];
+    
+    PSPDFMenuItem *custom = [[PSPDFMenuItem alloc] initWithTitle:@"CUSTOM" action:@selector(customAction:)];
+    NSLog(@"%@",[UIMenuController sharedMenuController].menuItems.debugDescription);
+    
+    NSMutableArray *menuItems = [[NSMutableArray alloc] initWithObjects:custom, nil];
+    
+    [[UIMenuController sharedMenuController] setMenuItems:menuItems];
+     NSLog(@"%@",[UIMenuController sharedMenuController].menuItems.debugDescription);
+    
 
+}
+
+
+- (NSArray *)pdfViewController:(PSPDFViewController *)pdfController shouldShowMenuItems:(NSArray *)menuItems atSuggestedTargetRect:(CGRect)rect forSelectedText:(NSString *)selectedText inRect:(CGRect)textRect onPageView:(PSPDFPageView *)pageView {
+    
+    // disable wikipedia
+    // be sure to check for PSPDFMenuItem class; there might also be classic UIMenuItems in the array.
+    // Note that for words that are in the iOS dictionary, instead of Wikipedia we show the "Define" menu item with the native dict.
+    // There is also a simpler way to disable wikipedia (document.allowedMenuActions)
+    NSMutableArray *newMenuItems = [menuItems mutableCopy];
+    for (PSPDFMenuItem *menuItem in menuItems) {
+        if ([menuItem isKindOfClass:[PSPDFMenuItem class]] && [menuItem.identifier isEqualToString:@"Wikipedia"]) {
+            [newMenuItems removeObjectIdenticalTo:menuItem];
+            break;
+        }
+    }
+    
+    // add option to google for it.
+    PSPDFMenuItem *googleItem = [[PSPDFMenuItem alloc] initWithTitle:NSLocalizedString(@"Google", nil) block:^{
+        
+        // trim removes stuff like \n or 's.
+        NSString *trimmedSearchText = PSPDFTrimString(selectedText);
+        NSString *URLString = [NSString stringWithFormat:@"http://www.google.com/search?q=%@", [trimmedSearchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+        
+        // create browser
+        PSPDFWebViewController *browser = [[PSPDFWebViewController alloc] initWithURL:[NSURL URLWithString:URLString]];
+        browser.delegate = pdfController;
+        browser.contentSizeForViewInPopover = CGSizeMake(600, 500);
+        
+       
+        [self presentModalOrInPopover:browser embeddedInNavigationController:YES withCloseButton:YES animated:YES sender:nil options:@{PSPDFPresentOptionRect : BOXED(rect)}];
+        
+    } identifier:@"Google"];
+    [newMenuItems addObject:googleItem];
+    
+    return newMenuItems;
 }
 
 +(void)load {
     [super load];
-    [PSPDFMenuItem installMenuHandlerForObject:[[ShowPDFViewController alloc]init]];
+    
+    [PSPDFMenuItem installMenuHandlerForObject:self];
+    
 }
 
 
@@ -71,7 +121,8 @@
     return YES;
 }
 
-- (BOOL)canPerformAction:(SEL)action withSender:(id)sender {
+
+-(BOOL)canPerformAction:(SEL)action withSender:(id)sender {
     // The selector(s) should match your UIMenuItem selector
     if (action == @selector(customAction:)) {
         return YES;
