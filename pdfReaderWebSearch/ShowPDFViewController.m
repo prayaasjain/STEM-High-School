@@ -21,26 +21,21 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.pageTransition = PSPDFPageTransitionCurl;
     pdfViewer.userInteractionEnabled = YES;
     [pdfViewer setScalesPageToFit:YES];
     [self setRestorationIdentifier:@"showpdf"];
     self.delegate = self;
     self.rightBarButtonItems = [self.rightBarButtonItems arrayByAddingObject:searchButton];
-    
-    //UIMenuItem *custom = [[UIMenuItem alloc] initWithTitle:@"CUSTOM" action:@selector(customAction:)];
-    
-    PSPDFMenuItem *custom = [[PSPDFMenuItem alloc] initWithTitle:@"CUSTOM" action:@selector(customAction:)];
-    NSLog(@"%@",[UIMenuController sharedMenuController].menuItems.debugDescription);
-    
-    NSMutableArray *menuItems = [[NSMutableArray alloc] initWithObjects:custom, nil];
-    
-    [[UIMenuController sharedMenuController] setMenuItems:menuItems];
-     NSLog(@"%@",[UIMenuController sharedMenuController].menuItems.debugDescription);
-    
+   
 
 }
 
+
+- (NSArray *)pdfViewController:(PSPDFViewController *)pdfController shouldShowMenuItems:(NSArray *)menuItems atSuggestedTargetRect:(CGRect)rect forAnnotations:(NSArray *)annotations inRect:(CGRect)annotationRect onPageView:(PSPDFPageView *)pageView {
+    
+    return menuItems; 
+}
 
 - (NSArray *)pdfViewController:(PSPDFViewController *)pdfController shouldShowMenuItems:(NSArray *)menuItems atSuggestedTargetRect:(CGRect)rect forSelectedText:(NSString *)selectedText inRect:(CGRect)textRect onPageView:(PSPDFPageView *)pageView {
     
