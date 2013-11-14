@@ -39,8 +39,8 @@
 		D8D1F7B81770D7130011A103 /* WebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D1F7B71770D7130011A103 /* WebViewController.m */; };
 		D8D1F7BD1772235B0011A103 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D1F7BC1772235A0011A103 /* TableViewController.m */; };
 		D8D1F7C0177233DF0011A103 /* SearchType.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D1F7BF177233DF0011A103 /* SearchType.m */; };
-		D8ED98961831597600BAAE8B /* websearch.png in Resources */ = {isa = PBXBuildFile; fileRef = D8ED98941831597600BAAE8B /* websearch.png */; };
-		D8ED98971831597600BAAE8B /* websearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8ED98951831597600BAAE8B /* websearch@2x.png */; };
+		D8D794F618356C2600EDF7B3 /* websearch.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D794F418356C2600EDF7B3 /* websearch.png */; };
+		D8D794F718356C2600EDF7B3 /* websearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D794F518356C2600EDF7B3 /* websearch@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -89,8 +89,8 @@
 		D8D1F7BC1772235A0011A103 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
 		D8D1F7BE177233DF0011A103 /* SearchType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchType.h; sourceTree = "<group>"; };
 		D8D1F7BF177233DF0011A103 /* SearchType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchType.m; sourceTree = "<group>"; };
-		D8ED98941831597600BAAE8B /* websearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = websearch.png; sourceTree = "<group>"; };
-		D8ED98951831597600BAAE8B /* websearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "websearch@2x.png"; sourceTree = "<group>"; };
+		D8D794F418356C2600EDF7B3 /* websearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = websearch.png; sourceTree = "<group>"; };
+		D8D794F518356C2600EDF7B3 /* websearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "websearch@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,8 +190,8 @@
 		D8D1F79A1770D2840011A103 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D8ED98941831597600BAAE8B /* websearch.png */,
-				D8ED98951831597600BAAE8B /* websearch@2x.png */,
+				D8D794F418356C2600EDF7B3 /* websearch.png */,
+				D8D794F518356C2600EDF7B3 /* websearch@2x.png */,
 				D809B9AF17C4202B0011220B /* green-board-text.png */,
 				D809B9AD17C41FAE0011220B /* button-green-wide.png */,
 				D809B9AB17C41DB40011220B /* button-green.png */,
@@ -282,8 +282,8 @@
 				D809B9AC17C41DB40011220B /* button-green.png in Resources */,
 				D809B9AE17C41FAE0011220B /* button-green-wide.png in Resources */,
 				D8BFB8A0180CACE0002DA2E0 /* PSPDFKit-Acknowledgements in Resources */,
-				D8ED98971831597600BAAE8B /* websearch@2x.png in Resources */,
-				D8ED98961831597600BAAE8B /* websearch.png in Resources */,
+				D8D794F718356C2600EDF7B3 /* websearch@2x.png in Resources */,
+				D8D794F618356C2600EDF7B3 /* websearch.png in Resources */,
 				D809B9B017C4202B0011220B /* green-board-text.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -401,14 +401,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/peppysisay/pdfReaderWebSearch/PSPDFKit.embeddedframework,
+					/Users/prayaasjain/pdfReaderWebSearch/PSPDFKit.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pdfReaderWebSearch/pdfReaderWebSearch-Prefix.pch";
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9A984D74-F1AD-4985-9CA1-A04A53588A30";
+				PROVISIONING_PROFILE = "434D9EC3-7C63-4244-9678-92705AFA946D";
 				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
@@ -423,14 +423,14 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					/Users/peppysisay/pdfReaderWebSearch/PSPDFKit.embeddedframework,
+					/Users/prayaasjain/pdfReaderWebSearch/PSPDFKit.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "pdfReaderWebSearch/pdfReaderWebSearch-Prefix.pch";
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "9A984D74-F1AD-4985-9CA1-A04A53588A30";
+				PROVISIONING_PROFILE = "434D9EC3-7C63-4244-9678-92705AFA946D";
 				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;

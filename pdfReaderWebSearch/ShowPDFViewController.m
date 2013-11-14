@@ -56,23 +56,14 @@
         }
     }
     
-    // add option to google for it.
-    PSPDFMenuItem *googleItem = [[PSPDFMenuItem alloc] initWithTitle:NSLocalizedString(@"Google", nil) block:^{
-        
-        // trim removes stuff like \n or 's.
+    // add option for web search
+    PSPDFMenuItem *searchItem = [[PSPDFMenuItem alloc] initWithTitle:NSLocalizedString(@"Web Search", nil) block:^{
+    
         NSString *trimmedSearchText = PSPDFTrimString(selectedText);
-        NSString *URLString = [NSString stringWithFormat:@"http://www.google.com/search?q=%@", [trimmedSearchText stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-        
-        // create browser
-        PSPDFWebViewController *browser = [[PSPDFWebViewController alloc] initWithURL:[NSURL URLWithString:URLString]];
-        browser.delegate = pdfController;
-        browser.contentSizeForViewInPopover = CGSizeMake(600, 500);
-        
-       
-        [self presentModalOrInPopover:browser embeddedInNavigationController:YES withCloseButton:YES animated:YES sender:nil options:@{PSPDFPresentOptionRect : BOXED(rect)}];
-        
-    } identifier:@"Google"];
-    [newMenuItems addObject:googleItem];
+        [self showSearchWithString:trimmedSearchText];
+    
+    } identifier:@"Web Search"];
+    [newMenuItems addObject:searchItem];
     
     return newMenuItems;
 }
@@ -83,9 +74,6 @@
     [PSPDFMenuItem installMenuHandlerForObject:self];
     
 }
-
-
-
 
 -(void) commonInitWithDocument:(PSPDFDocument *)document   {
     [super commonInitWithDocument:document];
@@ -121,35 +109,14 @@
     return YES;
 }
 
-
--(BOOL)canPerformAction:(SEL)action withSender:(id)sender {
-    // The selector(s) should match your UIMenuItem selector
-    if (action == @selector(customAction:)) {
-        return YES;
-    }
-//    if (action == @selector(highlight:)) {
-//        return YES;
-//    }
-    return NO;
-}
-
 #pragma mark - Custom Action(s)
-- (void)customAction:(id)sender {
+- (void)showSearchWithString:(NSString *)selectedText {
     
-    
-    [[UIApplication sharedApplication] sendAction:@selector(copy:) to:nil from:self forEvent:nil];
-    selection = [UIPasteboard generalPasteboard].string;
-    
+    selection = selectedText;
     //NSLog(@"The selected string was: %@",selection);
     [self performSegueWithIdentifier:@"showSearch" sender:self];
     
 }
-
-//- (void)highlight:(id)sender {
-//    NSString *js = @"document.execCommand('HiliteColor')";
-//    [pdfViewer stringByEvaluatingJavaScriptFromString:js];
-//    
-//}
 
 -(void)loadPDF:(NSString *)path{
 
@@ -158,13 +125,6 @@
     [pdfViewer loadRequest:request];
     //NSLog(@"Should of loaded path: %@",path);
 }
-
-//-(void)goToPage:(int)page {
-//    CGFloat goaly = 1068 * (page-1);
-//    CGPoint goal = CGPointMake(pdfViewer.scrollView.contentOffset.x, goaly);
-//    
-//    [pdfViewer.scrollView setContentOffset:goal animated:YES];
-//}
 
 -(void)loadURL:(NSURL *)url{
     NSLog(@"loadURL being called");
