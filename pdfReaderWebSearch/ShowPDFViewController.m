@@ -20,12 +20,13 @@
 -(void)viewDidLoad
 {
     [super viewDidLoad];
-    
+    self.pageTransition = PSPDFPageTransitionCurl;
     pdfViewer.userInteractionEnabled = YES;
     [pdfViewer setScalesPageToFit:YES];
     [self setRestorationIdentifier:@"showpdf"];
     self.delegate = self;
     self.rightBarButtonItems = [self.rightBarButtonItems arrayByAddingObject:searchButton];
+<<<<<<< HEAD
     
     sharedManager = [MyManager sharedManager];
     
@@ -39,9 +40,17 @@
     [[UIMenuController sharedMenuController] setMenuItems:menuItems];
      NSLog(@"%@",[UIMenuController sharedMenuController].menuItems.debugDescription);
     
+=======
+   
+>>>>>>> cafc8bdd9c45329ac43c15485ae743e589dcc388
 
 }
 
+
+- (NSArray *)pdfViewController:(PSPDFViewController *)pdfController shouldShowMenuItems:(NSArray *)menuItems atSuggestedTargetRect:(CGRect)rect forAnnotations:(NSArray *)annotations inRect:(CGRect)annotationRect onPageView:(PSPDFPageView *)pageView {
+    
+    return menuItems; 
+}
 
 - (NSArray *)pdfViewController:(PSPDFViewController *)pdfController shouldShowMenuItems:(NSArray *)menuItems atSuggestedTargetRect:(CGRect)rect forSelectedText:(NSString *)selectedText inRect:(CGRect)textRect onPageView:(PSPDFPageView *)pageView {
     
