@@ -50,12 +50,6 @@ NSMutableArray *searchEngines;
     [searchEngines addObject:search];
     
     search = [[SearchType alloc]init];
-    [search setEngineName:@"Bing"];
-    [search setSearchURL:@"http://www.bing.com/search?q="];
-    [search setSearchDescription:@"www.bing.com"];
-    [searchEngines addObject:search];
-    
-    search = [[SearchType alloc]init];
     [search setEngineName:@"Wikipedia"];
     [search setSearchURL:@"http://en.wikipedia.org/wiki/Special:Search?search="];
     [search setSearchDescription:@"www.wikipedia.org"];
@@ -71,6 +65,12 @@ NSMutableArray *searchEngines;
     [search setEngineName:@"Young Scientist"];
     [search setSearchURL:@"http://searchvu.vanderbilt.edu/search?q="];
     [search setSearchDescription:@"Vanderbilt University"];
+    [searchEngines addObject:search];
+    
+    search = [[SearchType alloc]init];
+    [search setEngineName:@"TIME for Kids"];
+    [search setSearchURL:@"http://timeforkids.com/search/site/"];
+    [search setSearchDescription:@"TIME for Kids"];
     [searchEngines addObject:search];
 
     // Uncomment the following line to preserve selection between presentations.

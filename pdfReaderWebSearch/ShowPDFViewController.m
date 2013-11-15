@@ -14,8 +14,7 @@
 @end
 
 @implementation ShowPDFViewController
-
-@synthesize pdfViewer,backView, selection, timer, offset,search,searchButton;
+@synthesize pdfViewer, selection,search,searchButton;
 
 
 -(void)viewDidLoad
@@ -27,6 +26,8 @@
     [self setRestorationIdentifier:@"showpdf"];
     self.delegate = self;
     self.rightBarButtonItems = [self.rightBarButtonItems arrayByAddingObject:searchButton];
+    
+    sharedManager = [MyManager sharedManager];
     
     //UIMenuItem *custom = [[UIMenuItem alloc] initWithTitle:@"CUSTOM" action:@selector(customAction:)];
     
@@ -60,6 +61,7 @@
     PSPDFMenuItem *searchItem = [[PSPDFMenuItem alloc] initWithTitle:NSLocalizedString(@"Web Search", nil) block:^{
     
         NSString *trimmedSearchText = PSPDFTrimString(selectedText);
+        [sharedManager.searchBundle setObject:trimmedSearchText forKey:@"SEARCH"];
         [self showSearchWithString:trimmedSearchText];
     
     } identifier:@"Web Search"];

@@ -41,6 +41,7 @@
 		D8D1F7C0177233DF0011A103 /* SearchType.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D1F7BF177233DF0011A103 /* SearchType.m */; };
 		D8D794F618356C2600EDF7B3 /* websearch.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D794F418356C2600EDF7B3 /* websearch.png */; };
 		D8D794F718356C2600EDF7B3 /* websearch@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D8D794F518356C2600EDF7B3 /* websearch@2x.png */; };
+		D8D794FA1835A6F000EDF7B3 /* MyManager.m in Sources */ = {isa = PBXBuildFile; fileRef = D8D794F91835A6EF00EDF7B3 /* MyManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,7 +68,7 @@
 		D8BFB89C180CACE0002DA2E0 /* PSPDFKit-Version */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "PSPDFKit-Version"; sourceTree = "<group>"; };
 		D8BFB89D180CACE0002DA2E0 /* PSPDFKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = PSPDFKit.bundle; sourceTree = "<group>"; };
 		D8BFB89E180CACE0002DA2E0 /* PSPDFKit.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = PSPDFKit.xcconfig; sourceTree = "<group>"; };
-		D8D1F7901770D2840011A103 /* pdfReaderWebSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = pdfReaderWebSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D1F7901770D2840011A103 /* STEM High School.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "STEM High School.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D1F7931770D2840011A103 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D8D1F7951770D2840011A103 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D8D1F7971770D2840011A103 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -91,6 +92,8 @@
 		D8D1F7BF177233DF0011A103 /* SearchType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchType.m; sourceTree = "<group>"; };
 		D8D794F418356C2600EDF7B3 /* websearch.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = websearch.png; sourceTree = "<group>"; };
 		D8D794F518356C2600EDF7B3 /* websearch@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "websearch@2x.png"; sourceTree = "<group>"; };
+		D8D794F81835A6EF00EDF7B3 /* MyManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyManager.h; sourceTree = "<group>"; };
+		D8D794F91835A6EF00EDF7B3 /* MyManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,7 +148,7 @@
 		D8D1F7911770D2840011A103 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D8D1F7901770D2840011A103 /* pdfReaderWebSearch.app */,
+				D8D1F7901770D2840011A103 /* STEM High School.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -182,6 +185,8 @@
 				D8D1F7B71770D7130011A103 /* WebViewController.m */,
 				D8D1F7AE1770D2850011A103 /* ViewController.h */,
 				D8D1F7AF1770D2850011A103 /* ViewController.m */,
+				D8D794F81835A6EF00EDF7B3 /* MyManager.h */,
+				D8D794F91835A6EF00EDF7B3 /* MyManager.m */,
 				D8D1F79A1770D2840011A103 /* Supporting Files */,
 			);
 			path = pdfReaderWebSearch;
@@ -226,7 +231,7 @@
 			);
 			name = pdfReaderWebSearch;
 			productName = pdfReaderWebSearch;
-			productReference = D8D1F7901770D2840011A103 /* pdfReaderWebSearch.app */;
+			productReference = D8D1F7901770D2840011A103 /* STEM High School.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -299,6 +304,7 @@
 				D8D1F7A01770D2850011A103 /* main.m in Sources */,
 				D8D1F7A41770D2850011A103 /* AppDelegate.m in Sources */,
 				D8D1F7B01770D2850011A103 /* ViewController.m in Sources */,
+				D8D794FA1835A6F000EDF7B3 /* MyManager.m in Sources */,
 				D8D1F7B81770D7130011A103 /* WebViewController.m in Sources */,
 				D8D1F7BD1772235B0011A103 /* TableViewController.m in Sources */,
 				D8D1F7C0177233DF0011A103 /* SearchType.m in Sources */,
@@ -407,7 +413,7 @@
 				GCC_PREFIX_HEADER = "pdfReaderWebSearch/pdfReaderWebSearch-Prefix.pch";
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "STEM High School";
 				PROVISIONING_PROFILE = "434D9EC3-7C63-4244-9678-92705AFA946D";
 				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -429,7 +435,7 @@
 				GCC_PREFIX_HEADER = "pdfReaderWebSearch/pdfReaderWebSearch-Prefix.pch";
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "STEM High School";
 				PROVISIONING_PROFILE = "434D9EC3-7C63-4244-9678-92705AFA946D";
 				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = 2;

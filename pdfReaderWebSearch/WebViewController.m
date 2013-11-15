@@ -17,6 +17,7 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+
     }
     return self;
 }
@@ -28,33 +29,23 @@
     
     webView.delegate = self;
     [webView setScalesPageToFit:YES];
-    
+    sharedManager = [MyManager sharedManager];
+
     
     [self handleSelection:selectedSearchEngine];
-    
-   
-    
 }
 
 -(void) handleSelection:(NSString*)choice {
     NSString *urlAddress;
     NSURL *url;
     NSURLRequest *requestObj;
-    NSString *finalSearchQuery, *googleSearchQuery;
+    NSString *finalSearchQuery = [sharedManager.searchBundle objectForKey:@"SEARCH"];
     
-    googleSearchQuery = [desiredSearch stringByReplacingOccurrencesOfString:@"+" withString:@"%2B"];
-    googleSearchQuery = [googleSearchQuery stringByReplacingOccurrencesOfString:@"/" withString:@"%2F"];
-    finalSearchQuery = [desiredSearch stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    finalSearchQuery = [finalSearchQuery stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
     if([choice isEqualToString:@"Google"])
     {
-        urlAddress = [[NSString alloc] initWithFormat:@"http://www.google.com/search?q=%@",googleSearchQuery];
-        url = [NSURL URLWithString:urlAddress];
-        requestObj = [NSURLRequest requestWithURL:url];
-    }
-    else if([choice isEqualToString:@"Bing"])
-    {
-        urlAddress = [[NSString alloc] initWithFormat:@"http://www.bing.com/search?q=%@",googleSearchQuery];
+        urlAddress = [[NSString alloc] initWithFormat:@"http://www.google.com/search?q=%@",finalSearchQuery];
         url = [NSURL URLWithString:urlAddress];
         requestObj = [NSURLRequest requestWithURL:url];
     }
@@ -74,6 +65,12 @@
     {
         finalSearchQuery = [finalSearchQuery stringByAppendingString:@"&client=default_frontend&proxystylesheet=default_frontend&output=xml_no_dtd&go=GO&sort=date%3AD%3AL%3Ad1&entqr=0&oe=UTF-8&ie=UTF-8&ud=1&site=default_collection"];
         urlAddress = [[NSString alloc] initWithFormat:@"http://searchvu.vanderbilt.edu/search?q=%@",finalSearchQuery];
+        url = [NSURL URLWithString:urlAddress];
+        requestObj = [NSURLRequest requestWithURL:url];
+    }
+    else if([choice isEqualToString:@"TIME for Kids"])
+    {
+        urlAddress = [[NSString alloc] initWithFormat:@"http://timeforkids.com/search/site/%@",finalSearchQuery];
         url = [NSURL URLWithString:urlAddress];
         requestObj = [NSURLRequest requestWithURL:url];
     }

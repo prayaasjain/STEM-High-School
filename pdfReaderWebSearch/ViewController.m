@@ -36,7 +36,6 @@
                 WebViewController *wvc = [segue destinationViewController];
                 [wvc setTitle:@"Search Results"];
                 wvc.selectedSearchEngine = selectSearchButton.titleLabel.text;
-                wvc.desiredSearch = searchTextField.text;
                 wvc.show = self.show;
                 wvc.vc = self;
             
@@ -75,7 +74,6 @@
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"green-board-text.png"]];
     
     searchTextField.text = highlighted;
-    
 }
 
 #pragma mark - UIMenuController required methods

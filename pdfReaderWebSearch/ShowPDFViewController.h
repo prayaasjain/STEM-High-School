@@ -12,21 +12,23 @@
 #import "CustomView.h"
 #import "ViewController.h"
 #import "ListOfPDFViewController.h"
+#import "MyManager.h"
 
 @class ListOfPDFViewController;
 
 
-@interface ShowPDFViewController : PSPDFViewController <PSPDFViewControllerDelegate>
+@interface ShowPDFViewController : PSPDFViewController <PSPDFViewControllerDelegate> {
+
+    MyManager *sharedManager;
+
+}
 @property (weak, nonatomic) IBOutlet UIWebView *pdfViewer;
-@property (weak, nonatomic) IBOutlet CustomView *backView;
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *searchButton;
 
 -(void) loadPDF:(NSString *)path;
 -(void)loadURL:(NSURL *)url;
 
 @property (weak) NSString *selection;
-@property (weak) NSTimer  *timer;
-@property CGFloat *offset;
 @property (strong) UIMenuItem *search;
 
 @end

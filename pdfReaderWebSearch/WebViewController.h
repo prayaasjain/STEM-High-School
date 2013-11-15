@@ -9,11 +9,14 @@
 #import <UIKit/UIKit.h>
 #import "ViewController.h"
 #import "ShowPDFViewController.h"
+#import "MyManager.h"
 
 @class ShowPDFViewController;
 @class ViewController;
 
-@interface WebViewController : UIViewController <UIWebViewDelegate> 
+@interface WebViewController : UIViewController <UIWebViewDelegate>  {
+    MyManager *sharedManager;
+}
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *addressBar;
