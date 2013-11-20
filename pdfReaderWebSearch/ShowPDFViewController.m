@@ -26,7 +26,6 @@
     [self setRestorationIdentifier:@"showpdf"];
     self.delegate = self;
     self.rightBarButtonItems = [self.rightBarButtonItems arrayByAddingObject:searchButton];
-<<<<<<< HEAD
     
     sharedManager = [MyManager sharedManager];
     
@@ -39,10 +38,6 @@
     
     [[UIMenuController sharedMenuController] setMenuItems:menuItems];
      NSLog(@"%@",[UIMenuController sharedMenuController].menuItems.debugDescription);
-    
-=======
-   
->>>>>>> cafc8bdd9c45329ac43c15485ae743e589dcc388
 
 }
 
