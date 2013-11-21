@@ -78,6 +78,18 @@ NSMutableArray *searchEngines;
     [search setSearchURL:@"http://infoplease.com/search?q="];
     [search setSearchDescription:@"Info please"];
     [searchEngines addObject:search];
+    
+    search = [[SearchType alloc]init];
+    [search setEngineName:@"Britannica Kids"];
+    [search setSearchURL:@"http://kids.britannica.com/search?query="];
+    [search setSearchDescription:@"Britannica Kids"];
+    [searchEngines addObject:search];
+    
+    search = [[SearchType alloc]init];
+    [search setEngineName:@"RefSeek"];
+    [search setSearchURL:@"http://www.refseek.com/search?q="];
+    [search setSearchDescription:@"RefSeek"];
+    [searchEngines addObject:search];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

@@ -80,6 +80,18 @@
         url = [NSURL URLWithString:urlAddress];
         requestObj = [NSURLRequest requestWithURL:url];
     }
+    else if([choice isEqualToString:@"Britannica Kids"])
+    {
+        urlAddress = [[NSString alloc] initWithFormat:@"http://kids.britannica.com/search?query=%@",finalSearchQuery];
+        url = [NSURL URLWithString:urlAddress];
+        requestObj = [NSURLRequest requestWithURL:url];
+    }
+    else if([choice isEqualToString:@"RefSeek"])
+    {
+        urlAddress = [[NSString alloc] initWithFormat:@"http://www.refseek.com/search?q=%@",finalSearchQuery];
+        url = [NSURL URLWithString:urlAddress];
+        requestObj = [NSURLRequest requestWithURL:url];
+    }
     [webView loadRequest:requestObj];
     [addressBar setText:urlAddress];
     
