@@ -38,6 +38,8 @@
                 wvc.selectedSearchEngine = selectSearchButton.titleLabel.text;
                 wvc.show = self.show;
                 wvc.vc = self;
+                NSString *searchText = [[NSString alloc] initWithString:searchTextField.text];
+                [sharedManager.searchBundle setObject:searchText forKey:@"SEARCH"];
             
         }
         else if([segue.identifier isEqualToString:@"popOver"]) {
@@ -72,7 +74,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"green-board-text.png"]];
-    
+    sharedManager = [MyManager sharedManager];
     searchTextField.text = highlighted;
 }
 

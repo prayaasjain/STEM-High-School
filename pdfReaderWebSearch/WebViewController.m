@@ -74,6 +74,12 @@
         url = [NSURL URLWithString:urlAddress];
         requestObj = [NSURLRequest requestWithURL:url];
     }
+    else if([choice isEqualToString:@"Info Please"])
+    {
+        urlAddress = [[NSString alloc] initWithFormat:@"http://infoplease.com/search?q=%@",finalSearchQuery];
+        url = [NSURL URLWithString:urlAddress];
+        requestObj = [NSURLRequest requestWithURL:url];
+    }
     [webView loadRequest:requestObj];
     [addressBar setText:urlAddress];
     

@@ -72,6 +72,12 @@ NSMutableArray *searchEngines;
     [search setSearchURL:@"http://timeforkids.com/search/site/"];
     [search setSearchDescription:@"TIME for Kids"];
     [searchEngines addObject:search];
+    
+    search = [[SearchType alloc]init];
+    [search setEngineName:@"Info Please"];
+    [search setSearchURL:@"http://infoplease.com/search?q="];
+    [search setSearchDescription:@"Info please"];
+    [searchEngines addObject:search];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

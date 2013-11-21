@@ -14,7 +14,9 @@
 
 @class ShowPDFViewController;
 
-@interface ViewController : UIViewController <UIPopoverControllerDelegate>
+@interface ViewController : UIViewController <UIPopoverControllerDelegate> {
+    MyManager *sharedManager;
+}
 
 @property (nonatomic,strong) SearchType *currentSearchEngine;
 @property (weak, nonatomic) IBOutlet UIButton *selectSearchButton;

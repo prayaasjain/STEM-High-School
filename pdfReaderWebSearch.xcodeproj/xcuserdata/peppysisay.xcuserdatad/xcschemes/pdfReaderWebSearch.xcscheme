@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D8D1F78F1770D2840011A103"
-               BuildableName = "pdfReaderWebSearch.app"
+               BuildableName = "STEM Seniors.app"
                BlueprintName = "pdfReaderWebSearch"
                ReferencedContainer = "container:pdfReaderWebSearch.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D8D1F78F1770D2840011A103"
-            BuildableName = "pdfReaderWebSearch.app"
+            BuildableName = "STEM Seniors.app"
             BlueprintName = "pdfReaderWebSearch"
             ReferencedContainer = "container:pdfReaderWebSearch.xcodeproj">
          </BuildableReference>
@@ -52,7 +52,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D8D1F78F1770D2840011A103"
-            BuildableName = "pdfReaderWebSearch.app"
+            BuildableName = "STEM Seniors.app"
             BlueprintName = "pdfReaderWebSearch"
             ReferencedContainer = "container:pdfReaderWebSearch.xcodeproj">
          </BuildableReference>
@@ -70,7 +70,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D8D1F78F1770D2840011A103"
-            BuildableName = "pdfReaderWebSearch.app"
+            BuildableName = "STEM Seniors.app"
             BlueprintName = "pdfReaderWebSearch"
             ReferencedContainer = "container:pdfReaderWebSearch.xcodeproj">
          </BuildableReference>
