@@ -23,6 +23,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *searchTextField;
 @property (weak) NSString *highlighted;
 @property (weak) ShowPDFViewController *show;
+@property (strong) NSMutableArray *searchEngines;
 - (IBAction)backButton:(id)sender;
 
+-(SearchType*)findSearchObjectForString:(NSString*)title;
 @end

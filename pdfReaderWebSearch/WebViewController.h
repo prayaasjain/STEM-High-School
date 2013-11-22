@@ -21,7 +21,7 @@
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property (weak, nonatomic) IBOutlet UITextField *addressBar;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
-@property (weak) NSString *selectedSearchEngine, *desiredSearch;
+@property (weak) SearchType *selectedSearchEngine, *desiredSearch;
 @property (weak) ShowPDFViewController *show;
 @property (weak) ViewController *vc;
 
@@ -31,6 +31,6 @@
 - (IBAction)backToPDF:(id)sender;
 - (IBAction)backToSearch:(id)sender;
 - (IBAction)dismissKeyboard:(id)sender;
--(void) handleSelection:(NSString*)choice;
+-(void) handleSelection:(SearchType*)choice;
 
 @end

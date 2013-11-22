@@ -30,12 +30,12 @@
     webView.delegate = self;
     [webView setScalesPageToFit:YES];
     sharedManager = [MyManager sharedManager];
-
+    
     
     [self handleSelection:selectedSearchEngine];
 }
 
--(void) handleSelection:(NSString*)choice {
+-(void) handleSelection:(SearchType*)choice {
     NSString *urlAddress;
     NSURL *url;
     NSURLRequest *requestObj;
@@ -43,57 +43,14 @@
     
     finalSearchQuery = [finalSearchQuery stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    if([choice isEqualToString:@"Google"])
-    {
-        urlAddress = [[NSString alloc] initWithFormat:@"http://www.google.com/search?q=%@",finalSearchQuery];
-        url = [NSURL URLWithString:urlAddress];
-        requestObj = [NSURLRequest requestWithURL:url];
-    }
-    else if([choice isEqualToString:@"Wikipedia"])
-    {
-        urlAddress = [[NSString alloc] initWithFormat:@"http://en.wikipedia.org/wiki/Special:Search?search=%@",finalSearchQuery];
-        url = [NSURL URLWithString:urlAddress];
-        requestObj = [NSURLRequest requestWithURL:url];
-    }
-    else if([choice isEqualToString:@"Bluesci"])
-    {
-        urlAddress = [[NSString alloc] initWithFormat:@"http://www.bluesci.org/?s=%@",finalSearchQuery];
-        url = [NSURL URLWithString:urlAddress];
-        requestObj = [NSURLRequest requestWithURL:url];
-    }
-    else if([choice isEqualToString:@"Young Scientist"])
-    {
-        finalSearchQuery = [finalSearchQuery stringByAppendingString:@"&client=default_frontend&proxystylesheet=default_frontend&output=xml_no_dtd&go=GO&sort=date%3AD%3AL%3Ad1&entqr=0&oe=UTF-8&ie=UTF-8&ud=1&site=default_collection"];
-        urlAddress = [[NSString alloc] initWithFormat:@"http://searchvu.vanderbilt.edu/search?q=%@",finalSearchQuery];
-        url = [NSURL URLWithString:urlAddress];
-        requestObj = [NSURLRequest requestWithURL:url];
-    }
-    else if([choice isEqualToString:@"TIME for Kids"])
-    {
-        urlAddress = [[NSString alloc] initWithFormat:@"http://timeforkids.com/search/site/%@",finalSearchQuery];
-        url = [NSURL URLWithString:urlAddress];
-        requestObj = [NSURLRequest requestWithURL:url];
-    }
-    else if([choice isEqualToString:@"Info Please"])
-    {
-        urlAddress = [[NSString alloc] initWithFormat:@"http://infoplease.com/search?q=%@",finalSearchQuery];
-        url = [NSURL URLWithString:urlAddress];
-        requestObj = [NSURLRequest requestWithURL:url];
-    }
-    else if([choice isEqualToString:@"Britannica Kids"])
-    {
-        urlAddress = [[NSString alloc] initWithFormat:@"http://kids.britannica.com/search?query=%@",finalSearchQuery];
-        url = [NSURL URLWithString:urlAddress];
-        requestObj = [NSURLRequest requestWithURL:url];
-    }
-    else if([choice isEqualToString:@"RefSeek"])
-    {
-        urlAddress = [[NSString alloc] initWithFormat:@"http://www.refseek.com/search?q=%@",finalSearchQuery];
-        url = [NSURL URLWithString:urlAddress];
-        requestObj = [NSURLRequest requestWithURL:url];
-    }
+    urlAddress = [[NSString alloc] initWithFormat:@"%@%@",choice.searchURL,finalSearchQuery];
+    url = [NSURL URLWithString:urlAddress];
+    requestObj = [NSURLRequest requestWithURL:url];
     [webView loadRequest:requestObj];
     [addressBar setText:urlAddress];
+    
+    
+    
     
 }
 

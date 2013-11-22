@@ -18,5 +18,8 @@
 
 @property (weak, nonatomic) UIPopoverController *popoverController;
 @property (weak) ViewController *vc;
+@property (weak) NSMutableArray *searchEngines;
+
+
 
 @end
