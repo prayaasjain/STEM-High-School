@@ -10,6 +10,6 @@
 
 @implementation SearchType
 
-@synthesize engineName, searchURL, searchDescription;
+@synthesize engineName, searchURL, searchDescription, additionalSearchParameters;
 
 @end

@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>88A196F0-AFE9-4B07-9DAF-3BF315BEC0B4</string>
+	<string>24ED0C79-E9B7-4387-BDFF-618070102E1D</string>
 	<key>IDESourceControlProjectName</key>
 	<string>pdfReaderWebSearch</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>F31E0CE2-D8A4-4A64-850F-322B2C4FC398</key>
-		<string>https://github.com/prayaasjain/pdfReaderWebSearch.git</string>
+		<key>CA073A84-5EE0-44CD-8489-68A7E61BAA42</key>
+		<string>https://github.com/prayaasjain/STEM-High-School.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>pdfReaderWebSearch.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>F31E0CE2-D8A4-4A64-850F-322B2C4FC398</key>
+		<key>CA073A84-5EE0-44CD-8489-68A7E61BAA42</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/prayaasjain/pdfReaderWebSearch.git</string>
+	<string>https://github.com/prayaasjain/STEM-High-School.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>F31E0CE2-D8A4-4A64-850F-322B2C4FC398</string>
+	<string>CA073A84-5EE0-44CD-8489-68A7E61BAA42</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>F31E0CE2-D8A4-4A64-850F-322B2C4FC398</string>
+			<string>CA073A84-5EE0-44CD-8489-68A7E61BAA42</string>
 			<key>IDESourceControlWCCName</key>
-			<string>pdfReaderWebSearch</string>
+			<string>STEM-High-School</string>
 		</dict>
 	</array>
 </dict>

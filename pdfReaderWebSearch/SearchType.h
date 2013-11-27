@@ -13,5 +13,6 @@
 @property (weak, nonatomic) NSString *engineName;
 @property (weak, nonatomic) NSString *searchURL;
 @property (weak, nonatomic) NSString *searchDescription;
+@property (weak, nonatomic) NSString *additionalSearchParameters;
 
 @end

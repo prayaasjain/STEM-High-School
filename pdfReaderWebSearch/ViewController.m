@@ -85,54 +85,63 @@
     [search setEngineName:@"Google"];
     [search setSearchURL:@"http://www.google.com/search?q="];
     [search setSearchDescription:@"www.google.com"];
+    [search setAdditionalSearchParameters:@""];
     [searchEngines addObject:search];
     
     search = [[SearchType alloc]init];
     [search setEngineName:@"Wikipedia"];
     [search setSearchURL:@"http://en.wikipedia.org/wiki/Special:Search?search="];
     [search setSearchDescription:@"www.wikipedia.org"];
+    [search setAdditionalSearchParameters:@""];
     [searchEngines addObject:search];
     
     search = [[SearchType alloc]init];
     [search setEngineName:@"Bluesci"];
     [search setSearchURL:@"http://www.bluesci.org/?s="];
     [search setSearchDescription:@"Cambridge University science magazine"];
+    [search setAdditionalSearchParameters:@""];
     [searchEngines addObject:search];
     
     search = [[SearchType alloc]init];
     [search setEngineName:@"Young Scientist"];
     [search setSearchURL:@"http://searchvu.vanderbilt.edu/search?q="];
     [search setSearchDescription:@"Vanderbilt University"];
+    [search setAdditionalSearchParameters:@"&client=default_frontend&proxystylesheet=default_frontend&output=xml_no_dtd&go=GO&sort=date%3AD%3AL%3Ad1&entqr=0&oe=UTF-8&ie=UTF-8&ud=1&site=default_collection"];
     [searchEngines addObject:search];
     
     search = [[SearchType alloc]init];
     [search setEngineName:@"TIME for Kids"];
     [search setSearchURL:@"http://timeforkids.com/search/site/"];
     [search setSearchDescription:@"TIME for Kids"];
+    [search setAdditionalSearchParameters:@""];
     [searchEngines addObject:search];
     
     search = [[SearchType alloc]init];
     [search setEngineName:@"Info Please"];
     [search setSearchURL:@"http://infoplease.com/search?q="];
     [search setSearchDescription:@"Info please"];
+    [search setAdditionalSearchParameters:@""];
     [searchEngines addObject:search];
     
     search = [[SearchType alloc]init];
     [search setEngineName:@"Britannica Kids"];
     [search setSearchURL:@"http://kids.britannica.com/search?query="];
     [search setSearchDescription:@"Britannica Kids"];
+    [search setAdditionalSearchParameters:@""];
     [searchEngines addObject:search];
     
     search = [[SearchType alloc]init];
     [search setEngineName:@"RefSeek"];
     [search setSearchURL:@"http://www.refseek.com/search?q="];
     [search setSearchDescription:@"RefSeek"];
+    [search setAdditionalSearchParameters:@""];
     [searchEngines addObject:search];
     
     search = [[SearchType alloc]init];
     [search setEngineName:@"Fact Monster"];
     [search setSearchURL:@"http://www.factmonster.com/search?fr=fmtnh&query="];
     [search setSearchDescription:@"Fact Monster"];
+    [search setAdditionalSearchParameters:@""];
     [searchEngines addObject:search];
 }
 

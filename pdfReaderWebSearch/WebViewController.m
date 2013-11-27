@@ -43,14 +43,11 @@
     
     finalSearchQuery = [finalSearchQuery stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     
-    urlAddress = [[NSString alloc] initWithFormat:@"%@%@",choice.searchURL,finalSearchQuery];
+    urlAddress = [[NSString alloc] initWithFormat:@"%@%@%@",choice.searchURL,finalSearchQuery,choice.additionalSearchParameters];
     url = [NSURL URLWithString:urlAddress];
     requestObj = [NSURLRequest requestWithURL:url];
     [webView loadRequest:requestObj];
     [addressBar setText:urlAddress];
-    
-    
-    
     
 }
 

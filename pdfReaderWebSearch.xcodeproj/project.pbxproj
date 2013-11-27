@@ -405,8 +405,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sisay Belayneh (7TDPQGABD2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sisay Belayneh (7TDPQGABD2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Prayaas Jain (L6TC4F6593)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Prayaas Jain (L6TC4F6593)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../pdfReaderWebSearch/PSPDFKit.embeddedframework,
@@ -416,7 +416,7 @@
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "STEM Seniors";
-				PROVISIONING_PROFILE = "9A984D74-F1AD-4985-9CA1-A04A53588A30";
+				PROVISIONING_PROFILE = "434D9EC3-7C63-4244-9678-92705AFA946D";
 				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
@@ -427,8 +427,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Sisay Belayneh (7TDPQGABD2)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Sisay Belayneh (7TDPQGABD2)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Prayaas Jain (L6TC4F6593)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Prayaas Jain (L6TC4F6593)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					../pdfReaderWebSearch/PSPDFKit.embeddedframework,
@@ -438,7 +438,7 @@
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "STEM Seniors";
-				PROVISIONING_PROFILE = "9A984D74-F1AD-4985-9CA1-A04A53588A30";
+				PROVISIONING_PROFILE = "434D9EC3-7C63-4244-9678-92705AFA946D";
 				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
