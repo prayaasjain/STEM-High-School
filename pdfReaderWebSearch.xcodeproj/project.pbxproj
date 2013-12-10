@@ -16,6 +16,8 @@
 		D809B9AC17C41DB40011220B /* button-green.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AB17C41DB40011220B /* button-green.png */; };
 		D809B9AE17C41FAE0011220B /* button-green-wide.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AD17C41FAE0011220B /* button-green-wide.png */; };
 		D809B9B017C4202B0011220B /* green-board-text.png in Resources */ = {isa = PBXBuildFile; fileRef = D809B9AF17C4202B0011220B /* green-board-text.png */; };
+		D835A02118565DC4004CD54C /* introScreen-Landscape.png in Resources */ = {isa = PBXBuildFile; fileRef = D835A01F18565DC4004CD54C /* introScreen-Landscape.png */; };
+		D835A02218565DC4004CD54C /* introScreen-Portrait.png in Resources */ = {isa = PBXBuildFile; fileRef = D835A02018565DC4004CD54C /* introScreen-Portrait.png */; };
 		D871F34B17BD7A4000A41339 /* bg_wood.png in Resources */ = {isa = PBXBuildFile; fileRef = D871F34A17BD7A4000A41339 /* bg_wood.png */; };
 		D8A2308A17B573E80076300E /* STEM-app-icon.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A2308917B573E80076300E /* STEM-app-icon.png */; };
 		D8A2308C17B573F80076300E /* STEM-app-icon-retina.png in Resources */ = {isa = PBXBuildFile; fileRef = D8A2308B17B573F80076300E /* STEM-app-icon-retina.png */; };
@@ -57,6 +59,8 @@
 		D809B9AB17C41DB40011220B /* button-green.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-green.png"; sourceTree = "<group>"; };
 		D809B9AD17C41FAE0011220B /* button-green-wide.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "button-green-wide.png"; sourceTree = "<group>"; };
 		D809B9AF17C4202B0011220B /* green-board-text.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "green-board-text.png"; sourceTree = "<group>"; };
+		D835A01F18565DC4004CD54C /* introScreen-Landscape.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "introScreen-Landscape.png"; sourceTree = "<group>"; };
+		D835A02018565DC4004CD54C /* introScreen-Portrait.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "introScreen-Portrait.png"; sourceTree = "<group>"; };
 		D871F34A17BD7A4000A41339 /* bg_wood.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_wood.png; sourceTree = "<group>"; };
 		D8A2308917B573E80076300E /* STEM-app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STEM-app-icon.png"; sourceTree = "<group>"; };
 		D8A2308B17B573F80076300E /* STEM-app-icon-retina.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "STEM-app-icon-retina.png"; sourceTree = "<group>"; };
@@ -195,6 +199,8 @@
 		D8D1F79A1770D2840011A103 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D835A01F18565DC4004CD54C /* introScreen-Landscape.png */,
+				D835A02018565DC4004CD54C /* introScreen-Portrait.png */,
 				D8D794F418356C2600EDF7B3 /* websearch.png */,
 				D8D794F518356C2600EDF7B3 /* websearch@2x.png */,
 				D809B9AF17C4202B0011220B /* green-board-text.png */,
@@ -281,6 +287,7 @@
 				D8A2308A17B573E80076300E /* STEM-app-icon.png in Resources */,
 				D8A2308C17B573F80076300E /* STEM-app-icon-retina.png in Resources */,
 				D871F34B17BD7A4000A41339 /* bg_wood.png in Resources */,
+				D835A02218565DC4004CD54C /* introScreen-Portrait.png in Resources */,
 				D8BFB8A1180CACE0002DA2E0 /* PSPDFKit-License in Resources */,
 				D809B99E17BEAB100011220B /* green-board.png in Resources */,
 				D8BFB8A4180CACE0002DA2E0 /* PSPDFKit-Version in Resources */,
@@ -290,6 +297,7 @@
 				D8D794F718356C2600EDF7B3 /* websearch@2x.png in Resources */,
 				D8D794F618356C2600EDF7B3 /* websearch.png in Resources */,
 				D809B9B017C4202B0011220B /* green-board-text.png in Resources */,
+				D835A02118565DC4004CD54C /* introScreen-Landscape.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,7 +373,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE = "434D9EC3-7C63-4244-9678-92705AFA946D";
+				PROVISIONING_PROFILE = "E7803FC4-3529-4B72-952E-BD58BE914A9F";
 				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -394,7 +402,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
-				PROVISIONING_PROFILE = "434D9EC3-7C63-4244-9678-92705AFA946D";
+				PROVISIONING_PROFILE = "E7803FC4-3529-4B72-952E-BD58BE914A9F";
 				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = 2;
 				VALIDATE_PRODUCT = YES;
@@ -416,7 +424,7 @@
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "STEM Seniors";
-				PROVISIONING_PROFILE = "434D9EC3-7C63-4244-9678-92705AFA946D";
+				PROVISIONING_PROFILE = "E7803FC4-3529-4B72-952E-BD58BE914A9F";
 				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
@@ -438,7 +446,7 @@
 				INFOPLIST_FILE = "pdfReaderWebSearch/pdfReaderWebSearch-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "STEM Seniors";
-				PROVISIONING_PROFILE = "434D9EC3-7C63-4244-9678-92705AFA946D";
+				PROVISIONING_PROFILE = "E7803FC4-3529-4B72-952E-BD58BE914A9F";
 				SDKROOT = iphoneos6.1;
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
