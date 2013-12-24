@@ -27,8 +27,8 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
-				<string>STEM-app-icon.png</string>
-				<string>STEM-app-icon-retina.png</string>
+				<string>stem-seniors-app_icon.png</string>
+				<string>stem-seniors-app_icon-retina.png</string>
 			</array>
 		</dict>
 	</dict>
@@ -61,7 +61,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>UILaunchImageFile</key>
-    <string>introScreen</string>
+	<key>LSApplicationCategoryType</key>
+	<string></string>
+	<key>UILaunchImageFile</key>
+	<string>introScreen</string>
 </dict>
 </plist>
