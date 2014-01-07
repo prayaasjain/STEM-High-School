@@ -53,7 +53,7 @@ static NSString *kDeletePartialTitle = @"Delete (%d)";
     self.tableView.backgroundView = backgroundImage;
     self.navigationController.navigationBar.topItem.prompt = @"The STEM Education Group";
     self.navigationController.navigationBar.barStyle = UIBarStyleBlackTranslucent;
-    [self setTitle:@"Documents"];
+    [self setTitle:@"My Books"];
     loadFromSite = false;
     
     [self loadArray];
@@ -143,6 +143,7 @@ static NSString *kDeletePartialTitle = @"Delete (%d)";
     docTitle = [NSString stringWithString:[[[listOfPDF objectAtIndex:indexPath.row] componentsSeparatedByString:mstring] componentsJoinedByString:@""]];
     NSCharacterSet *remove = [NSCharacterSet characterSetWithCharactersInString:@"/"];
     docTitle = [[docTitle componentsSeparatedByCharactersInSet:remove] componentsJoinedByString:@""];
+    docTitle = [[docTitle componentsSeparatedByString:@".pdf"] componentsJoinedByString:@""];
 
     cell.textLabel.text = docTitle;
     cell.imageView.image = [self thumbnailForPath:[listOfPDF objectAtIndex:indexPath.row]];
@@ -221,26 +222,18 @@ static NSString *kDeletePartialTitle = @"Delete (%d)";
         path = [listOfPDF objectAtIndex:indexPath.row];
         [self performSegueWithIdentifier:@"showPDF" sender:self];
         
-//        //create the PSPDF document
-//        NSURL *documentPath = [[NSURL alloc] initFileURLWithPath:path];
-//        PSPDFDocument *document = [PSPDFDocument documentWithURL:documentPath];
-        
-          //Open view controller
+        //Open view controller
         UINavigationController *nc = [self navigationController];
-       
         ShowPDFViewController *show = (ShowPDFViewController*)nc.topViewController;
-        //[show commonInitWithDocument:document];
         
-//        ShowPDFViewController *show = [ShowPDFViewController alloc];
-//        [show commonInitWithDocument:document];
-//        [self performSegueWithIdentifier:@"showPDF" sender:self];
-//        
-       
+        //display file name
         NSString *docTitle;
         docTitle = [NSString stringWithString:[[[listOfPDF objectAtIndex:indexPath.row] componentsSeparatedByString:mstring] componentsJoinedByString:@""]];
         NSCharacterSet *remove = [NSCharacterSet characterSetWithCharactersInString:@"/"];
         docTitle = [[docTitle componentsSeparatedByCharactersInSet:remove] componentsJoinedByString:@""];
+        docTitle = [[docTitle componentsSeparatedByString:@".pdf"] componentsJoinedByString:@""];
         [show setTitle:docTitle];
+    
     }
     else {
         NSArray *selectedRows = [self.tableView indexPathsForSelectedRows];
